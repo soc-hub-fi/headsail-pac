@@ -1,0 +1,18 @@
+[package]
+authors = ["Henri Lunnikivi <henri.lunnikivi@tuni.fi>, Esko Pekkarinen <esko.pekkarinen@tuni.fi>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Peripheral access API for System Control CPU of Headsail SoC"
+edition = "2018"
+keywords = ["headsail", "ibex", "register", "peripheral", "generated"]
+name = "headsail-pac"
+version = "0.2.0"
+
+[dependencies]
+bare-metal = { workspace = true }
+vcell = { workspace = true }
+critical-section  = { workspace = true, optional = true }
+riscv = { workspace = true }
+riscv-rt = { workspace = true, optional = true }
+
+[features]
+rt = ["riscv-rt"]
