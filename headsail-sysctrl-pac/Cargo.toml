@@ -4,7 +4,7 @@ categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access API for System Control CPU of Headsail SoC"
 edition = "2018"
 keywords = ["headsail", "ibex", "register", "peripheral", "generated"]
-name = "headsail-pac"
+name = "headsail-sysctrl-pac"
 version = "0.2.0"
 
 [dependencies]
