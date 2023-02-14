@@ -19,8 +19,8 @@ set -e
 
 rm -rf src
 mkdir src
-#svd patch patches/headsail.yaml
-svd2rust --target riscv -i headsail-sysctrl.svd
+svd patch patches/headsail.yaml
+svd2rust --target riscv -i headsail-sysctrl.svd.patched
 form -i lib.rs -o src
 rm lib.rs
 cargo fmt
