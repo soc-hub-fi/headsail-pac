@@ -517,7 +517,7 @@ pub struct SYSCTRL {
 unsafe impl Send for SYSCTRL {}
 impl SYSCTRL {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const sysctrl::RegisterBlock = 0x0010_1000 as *const _;
+    pub const PTR: *const sysctrl::RegisterBlock = 0x1a10_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const sysctrl::RegisterBlock {

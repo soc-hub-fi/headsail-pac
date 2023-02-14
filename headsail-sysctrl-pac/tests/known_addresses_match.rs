@@ -16,5 +16,5 @@ fn verify_ptr<T>(ptr: *const T, expected_addr: usize) {
 
 #[test]
 fn sysctrl() {
-    verify_ptr(pac::SYSCTRL::ptr(), 0x1A10_1000);
+    verify_ptr(pac::SYSCTRL::ptr(), 0x1A10_0000);
 }

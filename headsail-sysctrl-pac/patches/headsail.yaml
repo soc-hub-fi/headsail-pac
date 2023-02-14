@@ -1,1 +1,5 @@
 _svd: ../headsail-sysctrl.svd
+
+_modify:
+  SYSCTRL:
+    baseAddress: 0x1A10_0000
