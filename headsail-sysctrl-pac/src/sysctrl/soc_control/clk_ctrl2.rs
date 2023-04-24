@@ -34,315 +34,312 @@ impl From<crate::W<CLK_CTRL2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `mpc_sel_cka` reader - Select CKA"]
-pub type MPC_SEL_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `mpc_sel_cka` writer - Select CKA"]
-pub type MPC_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `mpc_force_cka` reader - Force CKA"]
-pub type MPC_FORCE_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `mpc_force_cka` writer - Force CKA"]
-pub type MPC_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `mpc_force_ckb` reader - Force CKB"]
-pub type MPC_FORCE_CKB_R = crate::BitReader<bool>;
-#[doc = "Field `mpc_force_ckb` writer - Force CKB"]
-pub type MPC_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `mpc_subsys_clkena` reader - Subsystem clock enable"]
-pub type MPC_SUBSYS_CLKENA_R = crate::BitReader<bool>;
-#[doc = "Field `mpc_subsys_clkena` writer - Subsystem clock enable"]
-pub type MPC_SUBSYS_CLKENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `mpc_pll_ctrl_valid` reader - PLL Control valid"]
-pub type MPC_PLL_CTRL_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `mpc_pll_ctrl_valid` writer - PLL Control valid"]
-pub type MPC_PLL_CTRL_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `interconnect_sel_cka` reader - Select CKA"]
-pub type INTERCONNECT_SEL_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `interconnect_sel_cka` writer - Select CKA"]
-pub type INTERCONNECT_SEL_CKA_W<'a, const O: u8> =
+#[doc = "Field `DSP_sel_cka` reader - Select CKA"]
+pub type DSP_SEL_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `DSP_sel_cka` writer - Select CKA"]
+pub type DSP_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `DSP_force_cka` reader - Force CKA"]
+pub type DSP_FORCE_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `DSP_force_cka` writer - Force CKA"]
+pub type DSP_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `DSP_force_ckb` reader - Force CKB"]
+pub type DSP_FORCE_CKB_R = crate::BitReader<bool>;
+#[doc = "Field `DSP_force_ckb` writer - Force CKB"]
+pub type DSP_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `DSP_subsys_clkena` reader - Subsystem clock enable"]
+pub type DSP_SUBSYS_CLKENA_R = crate::BitReader<bool>;
+#[doc = "Field `DSP_subsys_clkena` writer - Subsystem clock enable"]
+pub type DSP_SUBSYS_CLKENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `DSP_pll_ctrl_valid` reader - PLL Control valid"]
+pub type DSP_PLL_CTRL_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `DSP_pll_ctrl_valid` writer - PLL Control valid"]
+pub type DSP_PLL_CTRL_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `ICN_sel_cka` reader - Select CKA"]
+pub type ICN_SEL_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `ICN_sel_cka` writer - Select CKA"]
+pub type ICN_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `ICN_force_cka` reader - Force CKA"]
+pub type ICN_FORCE_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `ICN_force_cka` writer - Force CKA"]
+pub type ICN_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `ICN_force_ckb` reader - Force CKB"]
+pub type ICN_FORCE_CKB_R = crate::BitReader<bool>;
+#[doc = "Field `ICN_force_ckb` writer - Force CKB"]
+pub type ICN_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `ICN_subsys_clkena` reader - Subsystem clock enable"]
+pub type ICN_SUBSYS_CLKENA_R = crate::BitReader<bool>;
+#[doc = "Field `ICN_subsys_clkena` writer - Subsystem clock enable"]
+pub type ICN_SUBSYS_CLKENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `ICN_pll_ctrl_valid` reader - PLL Control valid"]
+pub type ICN_PLL_CTRL_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `ICN_pll_ctrl_valid` writer - PLL Control valid"]
+pub type ICN_PLL_CTRL_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_SER_sel_cka` reader - Select CKA"]
+pub type C2C_SER_SEL_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_SER_sel_cka` writer - Select CKA"]
+pub type C2C_SER_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_SER_force_cka` reader - Force CKA"]
+pub type C2C_SER_FORCE_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_SER_force_cka` writer - Force CKA"]
+pub type C2C_SER_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_SER_force_ckb` reader - Force CKB"]
+pub type C2C_SER_FORCE_CKB_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_SER_force_ckb` writer - Force CKB"]
+pub type C2C_SER_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_SER_subsys_clkena` reader - Subsystem clock enable"]
+pub type C2C_SER_SUBSYS_CLKENA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_SER_subsys_clkena` writer - Subsystem clock enable"]
+pub type C2C_SER_SUBSYS_CLKENA_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `interconnect_force_cka` reader - Force CKA"]
-pub type INTERCONNECT_FORCE_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `interconnect_force_cka` writer - Force CKA"]
-pub type INTERCONNECT_FORCE_CKA_W<'a, const O: u8> =
+#[doc = "Field `C2C_SER_pll_ctrl_valid` reader - PLL Control valid"]
+pub type C2C_SER_PLL_CTRL_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_SER_pll_ctrl_valid` writer - PLL Control valid"]
+pub type C2C_SER_PLL_CTRL_VALID_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `interconnect_force_ckb` reader - Force CKB"]
-pub type INTERCONNECT_FORCE_CKB_R = crate::BitReader<bool>;
-#[doc = "Field `interconnect_force_ckb` writer - Force CKB"]
-pub type INTERCONNECT_FORCE_CKB_W<'a, const O: u8> =
+#[doc = "Field `C2C_PAR_sel_cka` reader - Select CKA"]
+pub type C2C_PAR_SEL_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_PAR_sel_cka` writer - Select CKA"]
+pub type C2C_PAR_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_PAR_force_cka` reader - Force CKA"]
+pub type C2C_PAR_FORCE_CKA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_PAR_force_cka` writer - Force CKA"]
+pub type C2C_PAR_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_PAR_force_ckb` reader - Force CKB"]
+pub type C2C_PAR_FORCE_CKB_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_PAR_force_ckb` writer - Force CKB"]
+pub type C2C_PAR_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
+#[doc = "Field `C2C_PAR_subsys_clkena` reader - Subsystem clock enable"]
+pub type C2C_PAR_SUBSYS_CLKENA_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_PAR_subsys_clkena` writer - Subsystem clock enable"]
+pub type C2C_PAR_SUBSYS_CLKENA_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `interconnect_subsys_clkena` reader - Subsystem clock enable"]
-pub type INTERCONNECT_SUBSYS_CLKENA_R = crate::BitReader<bool>;
-#[doc = "Field `interconnect_subsys_clkena` writer - Subsystem clock enable"]
-pub type INTERCONNECT_SUBSYS_CLKENA_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `interconnect_pll_ctrl_valid` reader - PLL Control valid"]
-pub type INTERCONNECT_PLL_CTRL_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `interconnect_pll_ctrl_valid` writer - PLL Control valid"]
-pub type INTERCONNECT_PLL_CTRL_VALID_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `c2c_sel_cka` reader - Select CKA"]
-pub type C2C_SEL_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `c2c_sel_cka` writer - Select CKA"]
-pub type C2C_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `c2c_force_cka` reader - Force CKA"]
-pub type C2C_FORCE_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `c2c_force_cka` writer - Force CKA"]
-pub type C2C_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `c2c_force_ckb` reader - Force CKB"]
-pub type C2C_FORCE_CKB_R = crate::BitReader<bool>;
-#[doc = "Field `c2c_force_ckb` writer - Force CKB"]
-pub type C2C_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `c2c_subsys_clkena` reader - Subsystem clock enable"]
-pub type C2C_SUBSYS_CLKENA_R = crate::BitReader<bool>;
-#[doc = "Field `c2c_subsys_clkena` writer - Subsystem clock enable"]
-pub type C2C_SUBSYS_CLKENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `c2c_pll_ctrl_valid` reader - PLL Control valid"]
-pub type C2C_PLL_CTRL_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `c2c_pll_ctrl_valid` writer - PLL Control valid"]
-pub type C2C_PLL_CTRL_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `corehw_sel_cka` reader - Select CKA"]
-pub type COREHW_SEL_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `corehw_sel_cka` writer - Select CKA"]
-pub type COREHW_SEL_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `corehw_force_cka` reader - Force CKA"]
-pub type COREHW_FORCE_CKA_R = crate::BitReader<bool>;
-#[doc = "Field `corehw_force_cka` writer - Force CKA"]
-pub type COREHW_FORCE_CKA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `corehw_force_ckb` reader - Force CKB"]
-pub type COREHW_FORCE_CKB_R = crate::BitReader<bool>;
-#[doc = "Field `corehw_force_ckb` writer - Force CKB"]
-pub type COREHW_FORCE_CKB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `corehw_subsys_clkena` reader - Subsystem clock enable"]
-pub type COREHW_SUBSYS_CLKENA_R = crate::BitReader<bool>;
-#[doc = "Field `corehw_subsys_clkena` writer - Subsystem clock enable"]
-pub type COREHW_SUBSYS_CLKENA_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
-#[doc = "Field `corehw_pll_ctrl_valid` reader - PLL Control valid"]
-pub type COREHW_PLL_CTRL_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `corehw_pll_ctrl_valid` writer - PLL Control valid"]
-pub type COREHW_PLL_CTRL_VALID_W<'a, const O: u8> =
+#[doc = "Field `C2C_PAR_pll_ctrl_valid` reader - PLL Control valid"]
+pub type C2C_PAR_PLL_CTRL_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `C2C_PAR_pll_ctrl_valid` writer - PLL Control valid"]
+pub type C2C_PAR_PLL_CTRL_VALID_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CLK_CTRL2_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Select CKA"]
     #[inline(always)]
-    pub fn mpc_sel_cka(&self) -> MPC_SEL_CKA_R {
-        MPC_SEL_CKA_R::new((self.bits & 1) != 0)
+    pub fn dsp_sel_cka(&self) -> DSP_SEL_CKA_R {
+        DSP_SEL_CKA_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Force CKA"]
     #[inline(always)]
-    pub fn mpc_force_cka(&self) -> MPC_FORCE_CKA_R {
-        MPC_FORCE_CKA_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn dsp_force_cka(&self) -> DSP_FORCE_CKA_R {
+        DSP_FORCE_CKA_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Force CKB"]
     #[inline(always)]
-    pub fn mpc_force_ckb(&self) -> MPC_FORCE_CKB_R {
-        MPC_FORCE_CKB_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dsp_force_ckb(&self) -> DSP_FORCE_CKB_R {
+        DSP_FORCE_CKB_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Subsystem clock enable"]
     #[inline(always)]
-    pub fn mpc_subsys_clkena(&self) -> MPC_SUBSYS_CLKENA_R {
-        MPC_SUBSYS_CLKENA_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn dsp_subsys_clkena(&self) -> DSP_SUBSYS_CLKENA_R {
+        DSP_SUBSYS_CLKENA_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 7 - PLL Control valid"]
     #[inline(always)]
-    pub fn mpc_pll_ctrl_valid(&self) -> MPC_PLL_CTRL_VALID_R {
-        MPC_PLL_CTRL_VALID_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dsp_pll_ctrl_valid(&self) -> DSP_PLL_CTRL_VALID_R {
+        DSP_PLL_CTRL_VALID_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Select CKA"]
     #[inline(always)]
-    pub fn interconnect_sel_cka(&self) -> INTERCONNECT_SEL_CKA_R {
-        INTERCONNECT_SEL_CKA_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn icn_sel_cka(&self) -> ICN_SEL_CKA_R {
+        ICN_SEL_CKA_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Force CKA"]
     #[inline(always)]
-    pub fn interconnect_force_cka(&self) -> INTERCONNECT_FORCE_CKA_R {
-        INTERCONNECT_FORCE_CKA_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn icn_force_cka(&self) -> ICN_FORCE_CKA_R {
+        ICN_FORCE_CKA_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Force CKB"]
     #[inline(always)]
-    pub fn interconnect_force_ckb(&self) -> INTERCONNECT_FORCE_CKB_R {
-        INTERCONNECT_FORCE_CKB_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn icn_force_ckb(&self) -> ICN_FORCE_CKB_R {
+        ICN_FORCE_CKB_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Subsystem clock enable"]
     #[inline(always)]
-    pub fn interconnect_subsys_clkena(&self) -> INTERCONNECT_SUBSYS_CLKENA_R {
-        INTERCONNECT_SUBSYS_CLKENA_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn icn_subsys_clkena(&self) -> ICN_SUBSYS_CLKENA_R {
+        ICN_SUBSYS_CLKENA_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 15 - PLL Control valid"]
     #[inline(always)]
-    pub fn interconnect_pll_ctrl_valid(&self) -> INTERCONNECT_PLL_CTRL_VALID_R {
-        INTERCONNECT_PLL_CTRL_VALID_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn icn_pll_ctrl_valid(&self) -> ICN_PLL_CTRL_VALID_R {
+        ICN_PLL_CTRL_VALID_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Select CKA"]
     #[inline(always)]
-    pub fn c2c_sel_cka(&self) -> C2C_SEL_CKA_R {
-        C2C_SEL_CKA_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn c2c_ser_sel_cka(&self) -> C2C_SER_SEL_CKA_R {
+        C2C_SER_SEL_CKA_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Force CKA"]
     #[inline(always)]
-    pub fn c2c_force_cka(&self) -> C2C_FORCE_CKA_R {
-        C2C_FORCE_CKA_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn c2c_ser_force_cka(&self) -> C2C_SER_FORCE_CKA_R {
+        C2C_SER_FORCE_CKA_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Force CKB"]
     #[inline(always)]
-    pub fn c2c_force_ckb(&self) -> C2C_FORCE_CKB_R {
-        C2C_FORCE_CKB_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn c2c_ser_force_ckb(&self) -> C2C_SER_FORCE_CKB_R {
+        C2C_SER_FORCE_CKB_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Subsystem clock enable"]
     #[inline(always)]
-    pub fn c2c_subsys_clkena(&self) -> C2C_SUBSYS_CLKENA_R {
-        C2C_SUBSYS_CLKENA_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn c2c_ser_subsys_clkena(&self) -> C2C_SER_SUBSYS_CLKENA_R {
+        C2C_SER_SUBSYS_CLKENA_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 23 - PLL Control valid"]
     #[inline(always)]
-    pub fn c2c_pll_ctrl_valid(&self) -> C2C_PLL_CTRL_VALID_R {
-        C2C_PLL_CTRL_VALID_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn c2c_ser_pll_ctrl_valid(&self) -> C2C_SER_PLL_CTRL_VALID_R {
+        C2C_SER_PLL_CTRL_VALID_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Select CKA"]
     #[inline(always)]
-    pub fn corehw_sel_cka(&self) -> COREHW_SEL_CKA_R {
-        COREHW_SEL_CKA_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn c2c_par_sel_cka(&self) -> C2C_PAR_SEL_CKA_R {
+        C2C_PAR_SEL_CKA_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Force CKA"]
     #[inline(always)]
-    pub fn corehw_force_cka(&self) -> COREHW_FORCE_CKA_R {
-        COREHW_FORCE_CKA_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn c2c_par_force_cka(&self) -> C2C_PAR_FORCE_CKA_R {
+        C2C_PAR_FORCE_CKA_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Force CKB"]
     #[inline(always)]
-    pub fn corehw_force_ckb(&self) -> COREHW_FORCE_CKB_R {
-        COREHW_FORCE_CKB_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn c2c_par_force_ckb(&self) -> C2C_PAR_FORCE_CKB_R {
+        C2C_PAR_FORCE_CKB_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Subsystem clock enable"]
     #[inline(always)]
-    pub fn corehw_subsys_clkena(&self) -> COREHW_SUBSYS_CLKENA_R {
-        COREHW_SUBSYS_CLKENA_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn c2c_par_subsys_clkena(&self) -> C2C_PAR_SUBSYS_CLKENA_R {
+        C2C_PAR_SUBSYS_CLKENA_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 31 - PLL Control valid"]
     #[inline(always)]
-    pub fn corehw_pll_ctrl_valid(&self) -> COREHW_PLL_CTRL_VALID_R {
-        COREHW_PLL_CTRL_VALID_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn c2c_par_pll_ctrl_valid(&self) -> C2C_PAR_PLL_CTRL_VALID_R {
+        C2C_PAR_PLL_CTRL_VALID_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Select CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc_sel_cka(&mut self) -> MPC_SEL_CKA_W<0> {
-        MPC_SEL_CKA_W::new(self)
+    pub fn dsp_sel_cka(&mut self) -> DSP_SEL_CKA_W<0> {
+        DSP_SEL_CKA_W::new(self)
     }
     #[doc = "Bit 1 - Force CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc_force_cka(&mut self) -> MPC_FORCE_CKA_W<1> {
-        MPC_FORCE_CKA_W::new(self)
+    pub fn dsp_force_cka(&mut self) -> DSP_FORCE_CKA_W<1> {
+        DSP_FORCE_CKA_W::new(self)
     }
     #[doc = "Bit 2 - Force CKB"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc_force_ckb(&mut self) -> MPC_FORCE_CKB_W<2> {
-        MPC_FORCE_CKB_W::new(self)
+    pub fn dsp_force_ckb(&mut self) -> DSP_FORCE_CKB_W<2> {
+        DSP_FORCE_CKB_W::new(self)
     }
     #[doc = "Bit 3 - Subsystem clock enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc_subsys_clkena(&mut self) -> MPC_SUBSYS_CLKENA_W<3> {
-        MPC_SUBSYS_CLKENA_W::new(self)
+    pub fn dsp_subsys_clkena(&mut self) -> DSP_SUBSYS_CLKENA_W<3> {
+        DSP_SUBSYS_CLKENA_W::new(self)
     }
     #[doc = "Bit 7 - PLL Control valid"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc_pll_ctrl_valid(&mut self) -> MPC_PLL_CTRL_VALID_W<7> {
-        MPC_PLL_CTRL_VALID_W::new(self)
+    pub fn dsp_pll_ctrl_valid(&mut self) -> DSP_PLL_CTRL_VALID_W<7> {
+        DSP_PLL_CTRL_VALID_W::new(self)
     }
     #[doc = "Bit 8 - Select CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn interconnect_sel_cka(&mut self) -> INTERCONNECT_SEL_CKA_W<8> {
-        INTERCONNECT_SEL_CKA_W::new(self)
+    pub fn icn_sel_cka(&mut self) -> ICN_SEL_CKA_W<8> {
+        ICN_SEL_CKA_W::new(self)
     }
     #[doc = "Bit 9 - Force CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn interconnect_force_cka(&mut self) -> INTERCONNECT_FORCE_CKA_W<9> {
-        INTERCONNECT_FORCE_CKA_W::new(self)
+    pub fn icn_force_cka(&mut self) -> ICN_FORCE_CKA_W<9> {
+        ICN_FORCE_CKA_W::new(self)
     }
     #[doc = "Bit 10 - Force CKB"]
     #[inline(always)]
     #[must_use]
-    pub fn interconnect_force_ckb(&mut self) -> INTERCONNECT_FORCE_CKB_W<10> {
-        INTERCONNECT_FORCE_CKB_W::new(self)
+    pub fn icn_force_ckb(&mut self) -> ICN_FORCE_CKB_W<10> {
+        ICN_FORCE_CKB_W::new(self)
     }
     #[doc = "Bit 11 - Subsystem clock enable"]
     #[inline(always)]
     #[must_use]
-    pub fn interconnect_subsys_clkena(&mut self) -> INTERCONNECT_SUBSYS_CLKENA_W<11> {
-        INTERCONNECT_SUBSYS_CLKENA_W::new(self)
+    pub fn icn_subsys_clkena(&mut self) -> ICN_SUBSYS_CLKENA_W<11> {
+        ICN_SUBSYS_CLKENA_W::new(self)
     }
     #[doc = "Bit 15 - PLL Control valid"]
     #[inline(always)]
     #[must_use]
-    pub fn interconnect_pll_ctrl_valid(&mut self) -> INTERCONNECT_PLL_CTRL_VALID_W<15> {
-        INTERCONNECT_PLL_CTRL_VALID_W::new(self)
+    pub fn icn_pll_ctrl_valid(&mut self) -> ICN_PLL_CTRL_VALID_W<15> {
+        ICN_PLL_CTRL_VALID_W::new(self)
     }
     #[doc = "Bit 16 - Select CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn c2c_sel_cka(&mut self) -> C2C_SEL_CKA_W<16> {
-        C2C_SEL_CKA_W::new(self)
+    pub fn c2c_ser_sel_cka(&mut self) -> C2C_SER_SEL_CKA_W<16> {
+        C2C_SER_SEL_CKA_W::new(self)
     }
     #[doc = "Bit 17 - Force CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn c2c_force_cka(&mut self) -> C2C_FORCE_CKA_W<17> {
-        C2C_FORCE_CKA_W::new(self)
+    pub fn c2c_ser_force_cka(&mut self) -> C2C_SER_FORCE_CKA_W<17> {
+        C2C_SER_FORCE_CKA_W::new(self)
     }
     #[doc = "Bit 18 - Force CKB"]
     #[inline(always)]
     #[must_use]
-    pub fn c2c_force_ckb(&mut self) -> C2C_FORCE_CKB_W<18> {
-        C2C_FORCE_CKB_W::new(self)
+    pub fn c2c_ser_force_ckb(&mut self) -> C2C_SER_FORCE_CKB_W<18> {
+        C2C_SER_FORCE_CKB_W::new(self)
     }
     #[doc = "Bit 19 - Subsystem clock enable"]
     #[inline(always)]
     #[must_use]
-    pub fn c2c_subsys_clkena(&mut self) -> C2C_SUBSYS_CLKENA_W<19> {
-        C2C_SUBSYS_CLKENA_W::new(self)
+    pub fn c2c_ser_subsys_clkena(&mut self) -> C2C_SER_SUBSYS_CLKENA_W<19> {
+        C2C_SER_SUBSYS_CLKENA_W::new(self)
     }
     #[doc = "Bit 23 - PLL Control valid"]
     #[inline(always)]
     #[must_use]
-    pub fn c2c_pll_ctrl_valid(&mut self) -> C2C_PLL_CTRL_VALID_W<23> {
-        C2C_PLL_CTRL_VALID_W::new(self)
+    pub fn c2c_ser_pll_ctrl_valid(&mut self) -> C2C_SER_PLL_CTRL_VALID_W<23> {
+        C2C_SER_PLL_CTRL_VALID_W::new(self)
     }
     #[doc = "Bit 24 - Select CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn corehw_sel_cka(&mut self) -> COREHW_SEL_CKA_W<24> {
-        COREHW_SEL_CKA_W::new(self)
+    pub fn c2c_par_sel_cka(&mut self) -> C2C_PAR_SEL_CKA_W<24> {
+        C2C_PAR_SEL_CKA_W::new(self)
     }
     #[doc = "Bit 25 - Force CKA"]
     #[inline(always)]
     #[must_use]
-    pub fn corehw_force_cka(&mut self) -> COREHW_FORCE_CKA_W<25> {
-        COREHW_FORCE_CKA_W::new(self)
+    pub fn c2c_par_force_cka(&mut self) -> C2C_PAR_FORCE_CKA_W<25> {
+        C2C_PAR_FORCE_CKA_W::new(self)
     }
     #[doc = "Bit 26 - Force CKB"]
     #[inline(always)]
     #[must_use]
-    pub fn corehw_force_ckb(&mut self) -> COREHW_FORCE_CKB_W<26> {
-        COREHW_FORCE_CKB_W::new(self)
+    pub fn c2c_par_force_ckb(&mut self) -> C2C_PAR_FORCE_CKB_W<26> {
+        C2C_PAR_FORCE_CKB_W::new(self)
     }
     #[doc = "Bit 27 - Subsystem clock enable"]
     #[inline(always)]
     #[must_use]
-    pub fn corehw_subsys_clkena(&mut self) -> COREHW_SUBSYS_CLKENA_W<27> {
-        COREHW_SUBSYS_CLKENA_W::new(self)
+    pub fn c2c_par_subsys_clkena(&mut self) -> C2C_PAR_SUBSYS_CLKENA_W<27> {
+        C2C_PAR_SUBSYS_CLKENA_W::new(self)
     }
     #[doc = "Bit 31 - PLL Control valid"]
     #[inline(always)]
     #[must_use]
-    pub fn corehw_pll_ctrl_valid(&mut self) -> COREHW_PLL_CTRL_VALID_W<31> {
-        COREHW_PLL_CTRL_VALID_W::new(self)
+    pub fn c2c_par_pll_ctrl_valid(&mut self) -> C2C_PAR_PLL_CTRL_VALID_W<31> {
+        C2C_PAR_PLL_CTRL_VALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -351,7 +348,7 @@ impl W {
         self
     }
 }
-#[doc = "Subsystem Clock selection. Bit definition for MPC, Interconnect, C2C and CoreHW subsystems *_CLK_CTRL Bitfield definitions \\[bit\\]:\\[field\\]
+#[doc = "Subsystem Clock selection. Bit definition for DSP, Interconnect, C2C Serial and C2C Parallel. *_CLK_CTRL Bitfield definitions \\[bit\\]:\\[field\\]
 0: sel_cka 1: force_cka 2: force_ckb 3: subsys_clkena 4: - 5: - 6: - 7: pll_ctrl_valid\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_ctrl2](index.html) module"]
 pub struct CLK_CTRL2_SPEC;
 impl crate::RegisterSpec for CLK_CTRL2_SPEC {

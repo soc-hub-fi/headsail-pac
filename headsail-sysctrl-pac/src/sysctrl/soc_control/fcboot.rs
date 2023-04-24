@@ -34,23 +34,23 @@ impl From<crate::W<FCBOOT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FCBOOT` reader - Boot Start address"]
-pub type FCBOOT_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `FCBOOT` writer - Boot Start address"]
-pub type FCBOOT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCBOOT_SPEC, u32, u32, 32, O>;
+#[doc = "Field `bootaddr` reader - Boot Start address"]
+pub type BOOTADDR_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `bootaddr` writer - Boot Start address"]
+pub type BOOTADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCBOOT_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Boot Start address"]
     #[inline(always)]
-    pub fn fcboot(&self) -> FCBOOT_R {
-        FCBOOT_R::new(self.bits)
+    pub fn bootaddr(&self) -> BOOTADDR_R {
+        BOOTADDR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Boot Start address"]
     #[inline(always)]
     #[must_use]
-    pub fn fcboot(&mut self) -> FCBOOT_W<0> {
-        FCBOOT_W::new(self)
+    pub fn bootaddr(&mut self) -> BOOTADDR_W<0> {
+        BOOTADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -1,45 +1,52 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00..0x38 - GPIO"]
+    _reserved0: [u8; 0x1000],
+    #[doc = "0x1000..0x1038 - GPIO"]
     pub gpio: GPIO,
     _reserved1: [u8; 0x0fc8],
-    #[doc = "0x1000..0x1464 - UDMA"]
+    #[doc = "0x2000..0x212c - UDMA"]
     pub udma: UDMA,
-    _reserved2: [u8; 0x1b9c],
-    #[doc = "0x3000..0x30d0 - SocControl"]
+    _reserved2: [u8; 0x1ed4],
+    #[doc = "0x4000..0x40d0 - SocControl"]
     pub soc_control: SOC_CONTROL,
-    #[doc = "0x30d0..0x30f0 - ETH_PLL"]
-    pub eth_pll: ETH_PLL,
-    #[doc = "0x30f0..0x3110 - AI_PLL"]
-    pub ai_pll: AI_PLL,
-    #[doc = "0x3110..0x3130 - HPC_PLL"]
-    pub hpc_pll: HPC_PLL,
-    #[doc = "0x3130..0x3150 - PULP_PLL"]
-    pub pulp_pll: PULP_PLL,
-    #[doc = "0x3150..0x3170 - INTER_PLL"]
-    pub inter_pll: INTER_PLL,
-    #[doc = "0x3170..0x3190 - C2C_PLL"]
-    pub c2c_pll: C2C_PLL,
-    _reserved9: [u8; 0x20],
-    #[doc = "0x31b0..0x31d0 - TOPPERIPH_PLL"]
-    pub topperiph_pll: TOPPERIPH_PLL,
-    #[doc = "0x31d0..0x31d8 - BootConfig"]
+    _reserved3: [u8; 0x0100],
+    #[doc = "0x41d0..0x41d8 - BootConfig"]
     pub boot_config: BOOT_CONFIG,
-    _reserved11: [u8; 0x0e28],
-    #[doc = "0x4000..0x4108 - AdvancedTimer"]
+    _reserved4: [u8; 0x28],
+    #[doc = "0x4200..0x4220 - ETH_PLL"]
+    pub eth_pll: ETH_PLL,
+    #[doc = "0x4220..0x4240 - DLA_PLL"]
+    pub dla_pll: DLA_PLL,
+    #[doc = "0x4240..0x4260 - HPC_PLL"]
+    pub hpc_pll: HPC_PLL,
+    #[doc = "0x4260..0x4280 - DDR2_PLL"]
+    pub ddr2_pll: DDR2_PLL,
+    #[doc = "0x4280..0x42a0 - DSP_PLL"]
+    pub dsp_pll: DSP_PLL,
+    #[doc = "0x42a0..0x42c0 - ICN_PLL"]
+    pub icn_pll: ICN_PLL,
+    #[doc = "0x42c0..0x42e0 - C2C_SER_PLL"]
+    pub c2c_ser_pll: C2C_SER_PLL,
+    #[doc = "0x42e0..0x4300 - C2C_PAR_PLL"]
+    pub c2c_par_pll: C2C_PAR_PLL,
+    _reserved12: [u8; 0x0100],
+    #[doc = "0x4400..0x4410 - EMA_SS"]
+    pub ema_ss: EMA_SS,
+    _reserved13: [u8; 0x0bf0],
+    #[doc = "0x5000..0x5108 - AdvancedTimer"]
     pub advanced_timer: ADVANCED_TIMER,
-    _reserved12: [u8; 0x0ef8],
-    #[doc = "0x5000..0x508c - SocEventGenerator"]
+    _reserved14: [u8; 0x0ef8],
+    #[doc = "0x6000..0x608c - SocEventGenerator"]
     pub soc_event_generator: SOC_EVENT_GENERATOR,
-    _reserved13: [u8; 0x2f74],
-    #[doc = "0x8000..0x8028 - EventInterruptUnit"]
+    _reserved15: [u8; 0x2f74],
+    #[doc = "0x9000..0x9028 - EventInterruptUnit"]
     pub event_interrupt_unit: EVENT_INTERRUPT_UNIT,
-    _reserved14: [u8; 0x1fd8],
-    #[doc = "0xa000..0xa028 - Timer"]
+    _reserved16: [u8; 0x1fd8],
+    #[doc = "0xb000..0xb028 - Timer"]
     pub timer: TIMER,
-    _reserved15: [u8; 0x0001_4fd8],
-    #[doc = "0x1f000..0x1f060 - SDIO"]
+    _reserved17: [u8; 0x0001_4fd8],
+    #[doc = "0x20000..0x20060 - SDIO"]
     pub sdio: SDIO,
 }
 #[doc = "GPIO"]
@@ -87,38 +94,48 @@ pub use self::eth_pll::ETH_PLL;
 #[doc = r"Cluster"]
 #[doc = "ETH_PLL"]
 pub mod eth_pll;
-#[doc = "AI_PLL"]
-pub use self::ai_pll::AI_PLL;
+#[doc = "DLA_PLL"]
+pub use self::dla_pll::DLA_PLL;
 #[doc = r"Cluster"]
-#[doc = "AI_PLL"]
-pub mod ai_pll;
+#[doc = "DLA_PLL"]
+pub mod dla_pll;
 #[doc = "HPC_PLL"]
 pub use self::hpc_pll::HPC_PLL;
 #[doc = r"Cluster"]
 #[doc = "HPC_PLL"]
 pub mod hpc_pll;
-#[doc = "PULP_PLL"]
-pub use self::pulp_pll::PULP_PLL;
+#[doc = "DDR2_PLL"]
+pub use self::ddr2_pll::DDR2_PLL;
 #[doc = r"Cluster"]
-#[doc = "PULP_PLL"]
-pub mod pulp_pll;
-#[doc = "INTER_PLL"]
-pub use self::inter_pll::INTER_PLL;
+#[doc = "DDR2_PLL"]
+pub mod ddr2_pll;
+#[doc = "ICN_PLL"]
+pub use self::icn_pll::ICN_PLL;
 #[doc = r"Cluster"]
-#[doc = "INTER_PLL"]
-pub mod inter_pll;
-#[doc = "C2C_PLL"]
-pub use self::c2c_pll::C2C_PLL;
+#[doc = "ICN_PLL"]
+pub mod icn_pll;
+#[doc = "C2C_PAR_PLL"]
+pub use self::c2c_par_pll::C2C_PAR_PLL;
 #[doc = r"Cluster"]
-#[doc = "C2C_PLL"]
-pub mod c2c_pll;
-#[doc = "TOPPERIPH_PLL"]
-pub use self::topperiph_pll::TOPPERIPH_PLL;
+#[doc = "C2C_PAR_PLL"]
+pub mod c2c_par_pll;
+#[doc = "DSP_PLL"]
+pub use self::dsp_pll::DSP_PLL;
 #[doc = r"Cluster"]
-#[doc = "TOPPERIPH_PLL"]
-pub mod topperiph_pll;
+#[doc = "DSP_PLL"]
+pub mod dsp_pll;
 #[doc = "BootConfig"]
 pub use self::boot_config::BOOT_CONFIG;
 #[doc = r"Cluster"]
 #[doc = "BootConfig"]
 pub mod boot_config;
+#[doc = "C2C_SER_PLL"]
+pub use self::c2c_ser_pll::C2C_SER_PLL;
+#[doc = r"Cluster"]
+#[doc = "C2C_SER_PLL"]
+pub mod c2c_ser_pll;
+#[doc = "EMA_SS"]
+pub use self::ema_ss::EMA_SS;
+#[doc = r"Cluster"]
+#[doc = "EMA_SS"]
+pub mod ema_ss;

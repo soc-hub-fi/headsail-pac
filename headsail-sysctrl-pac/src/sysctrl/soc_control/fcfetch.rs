@@ -19,14 +19,14 @@ impl From<crate::W<FCFETCH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FCFETCH` writer - Enable Fetch, 1 to enable core execution"]
-pub type FCFETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCFETCH_SPEC, bool, O>;
+#[doc = "Field `fetch_enable` writer - Enable Fetch, 1 to enable core execution"]
+pub type FETCH_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCFETCH_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Enable Fetch, 1 to enable core execution"]
     #[inline(always)]
     #[must_use]
-    pub fn fcfetch(&mut self) -> FCFETCH_W<0> {
-        FCFETCH_W::new(self)
+    pub fn fetch_enable(&mut self) -> FETCH_ENABLE_W<0> {
+        FETCH_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
