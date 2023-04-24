@@ -3,3 +3,8 @@ _svd: ../headsail-sysctrl.svd
 _modify:
   SYSCTRL:
     baseAddress: 0x1A10_0000
+
+"SYSCTRL":
+  _modify:
+    SYSCTRL_PERIPH_CLK_DIV:
+      name: PERIPH_CLK_DIV

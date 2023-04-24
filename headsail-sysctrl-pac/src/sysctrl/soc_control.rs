@@ -52,7 +52,7 @@ pub struct SOC_CONTROL {
     #[doc = "0xa4 - "]
     pub slow_pulse_div: SLOW_PULSE_DIV,
     #[doc = "0xa8 - Controls for the peripheral clock divider within SysCtrl"]
-    pub sysctrl_periph_clk_div: SYSCTRL_PERIPH_CLK_DIV,
+    pub periph_clk_div: PERIPH_CLK_DIV,
     _reserved23: [u8; 0x04],
     #[doc = "0xb0 - Assertion of the Subsystem bit, deasserts the reset to the corresponding subsystem. Bit definition is mentioned in adjoining table"]
     pub ss_reset_en: SS_RESET_EN,
@@ -142,10 +142,10 @@ pub mod pad_cfg_0;
 pub type PAD_CFG_6 = crate::Reg<pad_cfg_6::PAD_CFG_6_SPEC>;
 #[doc = "Clock divider ratio for the 3 Interconnect modules"]
 pub mod pad_cfg_6;
-#[doc = "SYSCTRL_PERIPH_CLK_DIV (rw) register accessor: an alias for `Reg<SYSCTRL_PERIPH_CLK_DIV_SPEC>`"]
-pub type SYSCTRL_PERIPH_CLK_DIV = crate::Reg<sysctrl_periph_clk_div::SYSCTRL_PERIPH_CLK_DIV_SPEC>;
+#[doc = "PERIPH_CLK_DIV (rw) register accessor: an alias for `Reg<PERIPH_CLK_DIV_SPEC>`"]
+pub type PERIPH_CLK_DIV = crate::Reg<periph_clk_div::PERIPH_CLK_DIV_SPEC>;
 #[doc = "Controls for the peripheral clock divider within SysCtrl"]
-pub mod sysctrl_periph_clk_div;
+pub mod periph_clk_div;
 #[doc = "TOPPERIPH_CLK_DIV (rw) register accessor: an alias for `Reg<TOPPERIPH_CLK_DIV_SPEC>`"]
 pub type TOPPERIPH_CLK_DIV = crate::Reg<topperiph_clk_div::TOPPERIPH_CLK_DIV_SPEC>;
 #[doc = ""]
