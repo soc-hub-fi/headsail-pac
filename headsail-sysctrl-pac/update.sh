@@ -8,7 +8,7 @@
 # cargo install form
 # pip3 install --upgrade --user svdtools
 
-SVD2RUST_VER="0.28"
+SVD2RUST_VER="0.33"
 if [ $SVD2RUST_VER != $(svd2rust --version | grep -Po '\d+\.\d+') ];
     then echo "Unexpected svd2rust version. Install $SVD2RUST_VER using \`cargo install svd2rust --version=\"^$SVD2RUST_VER\"\` or run this script with \`FORCE=1 ./update.sh\`"
     [ -z "$FORCE" ] && exit 1
@@ -19,8 +19,8 @@ set -e
 
 rm -rf src
 mkdir src
-svd patch patches/headsail.yaml
-svd2rust --target riscv -i headsail-sysctrl.svd.patched
+svdtools patch patches/headsail.yaml
+svd2rust --target riscv -i headsail-sysctrl.svd.patched --ident-formats-theme legacy --impl-debug --impl-debug-feature derive-debug
 form -i lib.rs -o src
 rm lib.rs
 cargo fmt
@@ -30,4 +30,3 @@ grep -Ev 'feature = "rt"|extern crate riscv_rt' src/lib.rs > librs-temp && mv li
 
 cargo check
 cargo test
-

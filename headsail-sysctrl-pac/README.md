@@ -9,7 +9,7 @@ We have two kinds of users. Identify yourself:
 1. End-users: depend on the library.
 2. CI: just build the library, perhaps run tests.
 
-Both kinds of users need to have a Rust toolchain: run script at: "http://rustup.rs".
+Both kinds of users need to have a Rust toolchain: run script at: <http://rustup.rs>.
 
 ### End-user guide
 
@@ -28,9 +28,9 @@ for instructions on how to use the peripheral APIs.
 
 ### Pre-requirements
 
-- `cargo install svd2rust --version="^0.28"`
-- `cargo install form --version="^0.8"`
-- `pip3 install --upgrade --user svdtools`
+- `cargo install svd2rust --version="^0.33"`
+- `cargo install form --version="^0.12"`
+- `cargo install svdtools --version="^0.3"`
 
 ### Run generate
 

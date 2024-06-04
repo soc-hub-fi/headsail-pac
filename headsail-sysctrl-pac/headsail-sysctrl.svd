@@ -3,7 +3,7 @@
 	xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
 	<vendor>tuni.fi</vendor>
 	<name>headsail</name>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>Headsail system view</description>
 	<cpu>
 		<name>other</name>
@@ -1263,7 +1263,7 @@
 						</fields>
 					</register>
 					<register>
-                        <name>dma_pad</name>
+						<name>dma_pad</name>
 						<addressOffset>0x0048</addressOffset>
 						<size>32</size>
 						<access>read-only</access>
@@ -12289,7 +12289,7 @@
 		<peripheral>
 			<name>SYSCTRL</name>
 			<version>1.0</version>
-			<baseAddress>0x1A000000</baseAddress>
+			<baseAddress>0x1A100000</baseAddress>
 			<addressBlock>
 				<offset>0x1000</offset>
 				<size>0x1000</size>
@@ -18916,7 +18916,7 @@
 			</addressBlock>
 			<registers>
 				<cluster>
-					<name>dma_status</name>
+					<name>status</name>
 					<addressOffset>0x0000</addressOffset>
 					<register>
 						<name>IP_ID</name>
@@ -21113,7 +21113,7 @@
 			</addressBlock>
 			<registers>
 				<cluster>
-					<name>dma_status</name>
+					<name>status</name>
 					<addressOffset>0x0000</addressOffset>
 					<register>
 						<name>IP_ID</name>
