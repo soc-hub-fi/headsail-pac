@@ -1,0 +1,5 @@
+# More info on patch format: https://github.com/rust-embedded/svdtools/
+_svd: ../headsail-hpc.svd
+
+_include:
+  - "../../patches/common.yaml"
