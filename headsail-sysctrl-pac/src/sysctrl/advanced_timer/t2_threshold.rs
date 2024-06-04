@@ -1,47 +1,15 @@
 #[doc = "Register `T2_THRESHOLD` reader"]
-pub struct R(crate::R<T2_THRESHOLD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<T2_THRESHOLD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<T2_THRESHOLD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<T2_THRESHOLD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<T2_THRESHOLD_SPEC>;
 #[doc = "Register `T2_THRESHOLD` writer"]
-pub struct W(crate::W<T2_THRESHOLD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<T2_THRESHOLD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<T2_THRESHOLD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<T2_THRESHOLD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<T2_THRESHOLD_SPEC>;
 #[doc = "Field `TH_LO` reader - ADV_TIMER2 threshold low part configuration bitfield. It defines start counter value"]
-pub type TH_LO_R = crate::FieldReader<u16, u16>;
+pub type TH_LO_R = crate::FieldReader<u16>;
 #[doc = "Field `TH_LO` writer - ADV_TIMER2 threshold low part configuration bitfield. It defines start counter value"]
-pub type TH_LO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, T2_THRESHOLD_SPEC, u16, u16, 16, O>;
+pub type TH_LO_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `TH_HI` reader - ADV_TIMER2 threshold high part configuration bitfield. It defines end counter value."]
-pub type TH_HI_R = crate::FieldReader<u16, u16>;
+pub type TH_HI_R = crate::FieldReader<u16>;
 #[doc = "Field `TH_HI` writer - ADV_TIMER2 threshold high part configuration bitfield. It defines end counter value."]
-pub type TH_HI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, T2_THRESHOLD_SPEC, u16, u16, 16, O>;
+pub type TH_HI_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - ADV_TIMER2 threshold low part configuration bitfield. It defines start counter value"]
     #[inline(always)]
@@ -54,42 +22,43 @@ impl R {
         TH_HI_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("T2_THRESHOLD")
+            .field("th_lo", &self.th_lo())
+            .field("th_hi", &self.th_hi())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - ADV_TIMER2 threshold low part configuration bitfield. It defines start counter value"]
     #[inline(always)]
     #[must_use]
-    pub fn th_lo(&mut self) -> TH_LO_W<0> {
-        TH_LO_W::new(self)
+    pub fn th_lo(&mut self) -> TH_LO_W<T2_THRESHOLD_SPEC> {
+        TH_LO_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - ADV_TIMER2 threshold high part configuration bitfield. It defines end counter value."]
     #[inline(always)]
     #[must_use]
-    pub fn th_hi(&mut self) -> TH_HI_W<16> {
-        TH_HI_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn th_hi(&mut self) -> TH_HI_W<T2_THRESHOLD_SPEC> {
+        TH_HI_W::new(self, 16)
     }
 }
-#[doc = "ADV_TIMER2 threshold configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t2_threshold](index.html) module"]
+#[doc = "ADV_TIMER2 threshold configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`t2_threshold::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`t2_threshold::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct T2_THRESHOLD_SPEC;
 impl crate::RegisterSpec for T2_THRESHOLD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t2_threshold::R](R) reader structure"]
-impl crate::Readable for T2_THRESHOLD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [t2_threshold::W](W) writer structure"]
+#[doc = "`read()` method returns [`t2_threshold::R`](R) reader structure"]
+impl crate::Readable for T2_THRESHOLD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`t2_threshold::W`](W) writer structure"]
 impl crate::Writable for T2_THRESHOLD_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets T2_THRESHOLD to value 0"]
 impl crate::Resettable for T2_THRESHOLD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

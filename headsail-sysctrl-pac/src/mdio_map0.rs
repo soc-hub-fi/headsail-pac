@@ -1,8 +1,15 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[doc = "Register block"]
 pub struct RegisterBlock {
+    mdio: MDIO,
+}
+impl RegisterBlock {
     #[doc = "0x00..0x1c - mdio"]
-    pub mdio: MDIO,
+    #[inline(always)]
+    pub const fn mdio(&self) -> &MDIO {
+        &self.mdio
+    }
 }
 #[doc = "mdio"]
 pub use self::mdio::MDIO;

@@ -1,47 +1,15 @@
 #[doc = "Register `UART_IRQ_EN` reader"]
-pub struct R(crate::R<UART_IRQ_EN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UART_IRQ_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UART_IRQ_EN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UART_IRQ_EN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<UART_IRQ_EN_SPEC>;
 #[doc = "Register `UART_IRQ_EN` writer"]
-pub struct W(crate::W<UART_IRQ_EN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UART_IRQ_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UART_IRQ_EN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UART_IRQ_EN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<UART_IRQ_EN_SPEC>;
 #[doc = "Field `RX` reader - Rx interrupt in enable flag: - 1'b0: RX IRQ disable - 1'b1: RX IRQ enable"]
-pub type RX_R = crate::BitReader<bool>;
+pub type RX_R = crate::BitReader;
 #[doc = "Field `RX` writer - Rx interrupt in enable flag: - 1'b0: RX IRQ disable - 1'b1: RX IRQ enable"]
-pub type RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_IRQ_EN_SPEC, bool, O>;
+pub type RX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ERROR` reader - Error interrupt in enable flag: - 1'b0: Error IRQ disable - 1'b1: Error IRQ enable"]
-pub type ERROR_R = crate::BitReader<bool>;
+pub type ERROR_R = crate::BitReader;
 #[doc = "Field `ERROR` writer - Error interrupt in enable flag: - 1'b0: Error IRQ disable - 1'b1: Error IRQ enable"]
-pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_IRQ_EN_SPEC, bool, O>;
+pub type ERROR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Rx interrupt in enable flag: - 1'b0: RX IRQ disable - 1'b1: RX IRQ enable"]
     #[inline(always)]
@@ -54,42 +22,43 @@ impl R {
         ERROR_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART_IRQ_EN")
+            .field("rx", &self.rx())
+            .field("error", &self.error())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Rx interrupt in enable flag: - 1'b0: RX IRQ disable - 1'b1: RX IRQ enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rx(&mut self) -> RX_W<0> {
-        RX_W::new(self)
+    pub fn rx(&mut self) -> RX_W<UART_IRQ_EN_SPEC> {
+        RX_W::new(self, 0)
     }
     #[doc = "Bit 1 - Error interrupt in enable flag: - 1'b0: Error IRQ disable - 1'b1: Error IRQ enable"]
     #[inline(always)]
     #[must_use]
-    pub fn error(&mut self) -> ERROR_W<1> {
-        ERROR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn error(&mut self) -> ERROR_W<UART_IRQ_EN_SPEC> {
+        ERROR_W::new(self, 1)
     }
 }
-#[doc = "uDMA UART Read or Error interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_irq_en](index.html) module"]
+#[doc = "uDMA UART Read or Error interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`uart_irq_en::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`uart_irq_en::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct UART_IRQ_EN_SPEC;
 impl crate::RegisterSpec for UART_IRQ_EN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [uart_irq_en::R](R) reader structure"]
-impl crate::Readable for UART_IRQ_EN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [uart_irq_en::W](W) writer structure"]
+#[doc = "`read()` method returns [`uart_irq_en::R`](R) reader structure"]
+impl crate::Readable for UART_IRQ_EN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`uart_irq_en::W`](W) writer structure"]
 impl crate::Writable for UART_IRQ_EN_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UART_IRQ_EN to value 0"]
 impl crate::Resettable for UART_IRQ_EN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

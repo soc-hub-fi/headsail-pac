@@ -1,43 +1,11 @@
 #[doc = "Register `START_LO` reader"]
-pub struct R(crate::R<START_LO_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<START_LO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<START_LO_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<START_LO_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<START_LO_SPEC>;
 #[doc = "Register `START_LO` writer"]
-pub struct W(crate::W<START_LO_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<START_LO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<START_LO_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<START_LO_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<START_LO_SPEC>;
 #[doc = "Field `START_LO` reader - Timer high start command (sets EN in CFG_LO)"]
-pub type START_LO_R = crate::BitReader<bool>;
+pub type START_LO_R = crate::BitReader;
 #[doc = "Field `START_LO` writer - Timer high start command (sets EN in CFG_LO)"]
-pub type START_LO_W<'a, const O: u8> = crate::BitWriter<'a, u32, START_LO_SPEC, bool, O>;
+pub type START_LO_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Timer high start command (sets EN in CFG_LO)"]
     #[inline(always)]
@@ -45,36 +13,36 @@ impl R {
         START_LO_R::new((self.bits & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("START_LO")
+            .field("start_lo", &self.start_lo())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Timer high start command (sets EN in CFG_LO)"]
     #[inline(always)]
     #[must_use]
-    pub fn start_lo(&mut self) -> START_LO_W<0> {
-        START_LO_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn start_lo(&mut self) -> START_LO_W<START_LO_SPEC> {
+        START_LO_W::new(self, 0)
     }
 }
-#[doc = "Start Timer Low counting register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [start_lo](index.html) module"]
+#[doc = "Start Timer Low counting register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`start_lo::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`start_lo::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct START_LO_SPEC;
 impl crate::RegisterSpec for START_LO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [start_lo::R](R) reader structure"]
-impl crate::Readable for START_LO_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [start_lo::W](W) writer structure"]
+#[doc = "`read()` method returns [`start_lo::R`](R) reader structure"]
+impl crate::Readable for START_LO_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`start_lo::W`](W) writer structure"]
 impl crate::Writable for START_LO_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets START_LO to value 0"]
 impl crate::Resettable for START_LO_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

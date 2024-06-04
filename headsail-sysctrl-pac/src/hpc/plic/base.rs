@@ -1,20 +1,7 @@
 #[doc = "Register `base` reader"]
-pub struct R(crate::R<BASE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BASE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BASE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BASE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BASE_SPEC>;
 #[doc = "Field `base` reader - "]
-pub type BASE_R = crate::FieldReader<u32, u32>;
+pub type BASE_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -22,16 +9,20 @@ impl R {
         BASE_R::new(self.bits)
     }
 }
-#[doc = "Reserved\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("base").field("base", &self.base()).finish()
+    }
+}
+#[doc = "Reserved\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`base::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BASE_SPEC;
 impl crate::RegisterSpec for BASE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [base::R](R) reader structure"]
-impl crate::Readable for BASE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`base::R`](R) reader structure"]
+impl crate::Readable for BASE_SPEC {}
 #[doc = "`reset()` method sets base to value 0"]
 impl crate::Resettable for BASE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

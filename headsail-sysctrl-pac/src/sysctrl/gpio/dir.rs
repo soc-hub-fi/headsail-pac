@@ -1,43 +1,11 @@
 #[doc = "Register `DIR` reader"]
-pub struct R(crate::R<DIR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DIR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DIR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DIR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DIR_SPEC>;
 #[doc = "Register `DIR` writer"]
-pub struct W(crate::W<DIR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DIR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DIR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DIR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DIR_SPEC>;
 #[doc = "Field `DIR` reader - "]
-pub type DIR_R = crate::FieldReader<u32, u32>;
+pub type DIR_R = crate::FieldReader<u32>;
 #[doc = "Field `DIR` writer - "]
-pub type DIR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIR_SPEC, u32, u32, 32, O>;
+pub type DIR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -45,37 +13,35 @@ impl R {
         DIR_R::new(self.bits)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIR").field("dir", &self.dir()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     #[must_use]
-    pub fn dir(&mut self) -> DIR_W<0> {
-        DIR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn dir(&mut self) -> DIR_W<DIR_SPEC> {
+        DIR_W::new(self, 0)
     }
 }
 #[doc = "GPIO direction configuration bitfield: - bit\\[i\\]=1b0: Input mode for GPIO\\[i\\]
-- bit\\[i\\]=1b1: Output mode for GPIO\\[i\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dir](index.html) module"]
+- bit\\[i\\]=1b1: Output mode for GPIO\\[i\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dir::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dir::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DIR_SPEC;
 impl crate::RegisterSpec for DIR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dir::R](R) reader structure"]
-impl crate::Readable for DIR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dir::W](W) writer structure"]
+#[doc = "`read()` method returns [`dir::R`](R) reader structure"]
+impl crate::Readable for DIR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dir::W`](W) writer structure"]
 impl crate::Writable for DIR_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIR to value 0"]
 impl crate::Resettable for DIR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

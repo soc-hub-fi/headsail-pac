@@ -1,47 +1,15 @@
 #[doc = "Register `timer2_ctrl` reader"]
-pub struct R(crate::R<TIMER2_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TIMER2_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TIMER2_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TIMER2_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TIMER2_CTRL_SPEC>;
 #[doc = "Register `timer2_ctrl` writer"]
-pub struct W(crate::W<TIMER2_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TIMER2_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TIMER2_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TIMER2_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TIMER2_CTRL_SPEC>;
 #[doc = "Field `en` reader - Enable timer"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `en` writer - Enable timer"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER2_CTRL_SPEC, bool, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `prescaler` reader - Prescaler bits"]
-pub type PRESCALER_R = crate::FieldReader<u8, u8>;
+pub type PRESCALER_R = crate::FieldReader;
 #[doc = "Field `prescaler` writer - Prescaler bits"]
-pub type PRESCALER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMER2_CTRL_SPEC, u8, u8, 3, O>;
+pub type PRESCALER_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bit 0 - Enable timer"]
     #[inline(always)]
@@ -54,42 +22,43 @@ impl R {
         PRESCALER_R::new(((self.bits >> 3) & 7) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("timer2_ctrl")
+            .field("en", &self.en())
+            .field("prescaler", &self.prescaler())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable timer"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<TIMER2_CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - Prescaler bits"]
     #[inline(always)]
     #[must_use]
-    pub fn prescaler(&mut self) -> PRESCALER_W<3> {
-        PRESCALER_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn prescaler(&mut self) -> PRESCALER_W<TIMER2_CTRL_SPEC> {
+        PRESCALER_W::new(self, 3)
     }
 }
-#[doc = "Control register for timer 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer2_ctrl](index.html) module"]
+#[doc = "Control register for timer 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timer2_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timer2_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMER2_CTRL_SPEC;
 impl crate::RegisterSpec for TIMER2_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer2_ctrl::R](R) reader structure"]
-impl crate::Readable for TIMER2_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [timer2_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`timer2_ctrl::R`](R) reader structure"]
+impl crate::Readable for TIMER2_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`timer2_ctrl::W`](W) writer structure"]
 impl crate::Writable for TIMER2_CTRL_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets timer2_ctrl to value 0"]
 impl crate::Resettable for TIMER2_CTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

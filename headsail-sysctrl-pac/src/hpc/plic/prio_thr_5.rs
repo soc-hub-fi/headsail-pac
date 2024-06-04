@@ -1,43 +1,11 @@
 #[doc = "Register `prio_thr_5` reader"]
-pub struct R(crate::R<PRIO_THR_5_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRIO_THR_5_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRIO_THR_5_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRIO_THR_5_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRIO_THR_5_SPEC>;
 #[doc = "Register `prio_thr_5` writer"]
-pub struct W(crate::W<PRIO_THR_5_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRIO_THR_5_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRIO_THR_5_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRIO_THR_5_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PRIO_THR_5_SPEC>;
 #[doc = "Field `thr` reader - "]
-pub type THR_R = crate::FieldReader<u8, u8>;
+pub type THR_R = crate::FieldReader;
 #[doc = "Field `thr` writer - "]
-pub type THR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRIO_THR_5_SPEC, u8, u8, 3, O>;
+pub type THR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2"]
     #[inline(always)]
@@ -45,36 +13,36 @@ impl R {
         THR_R::new((self.bits & 7) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("prio_thr_5")
+            .field("thr", &self.thr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]
     #[must_use]
-    pub fn thr(&mut self) -> THR_W<0> {
-        THR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn thr(&mut self) -> THR_W<PRIO_THR_5_SPEC> {
+        THR_W::new(self, 0)
     }
 }
-#[doc = "Priority threshold for Hart 2 S-Mode (context #5) HPC masks all PLIC interrupts of a priority less than or equal to threshold. E.g., threshold zero permits all interrupts with non-zero priority, while 7 masks all interrupts.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prio_thr_5](index.html) module"]
+#[doc = "Priority threshold for Hart 2 S-Mode (context #5) HPC masks all PLIC interrupts of a priority less than or equal to threshold. E.g., threshold zero permits all interrupts with non-zero priority, while 7 masks all interrupts.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prio_thr_5::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prio_thr_5::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRIO_THR_5_SPEC;
 impl crate::RegisterSpec for PRIO_THR_5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prio_thr_5::R](R) reader structure"]
-impl crate::Readable for PRIO_THR_5_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [prio_thr_5::W](W) writer structure"]
+#[doc = "`read()` method returns [`prio_thr_5::R`](R) reader structure"]
+impl crate::Readable for PRIO_THR_5_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`prio_thr_5::W`](W) writer structure"]
 impl crate::Writable for PRIO_THR_5_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets prio_thr_5 to value 0"]
 impl crate::Resettable for PRIO_THR_5_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,51 +1,19 @@
 #[doc = "Register `ICN_PLL_DIV` reader"]
-pub struct R(crate::R<ICN_PLL_DIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ICN_PLL_DIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ICN_PLL_DIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ICN_PLL_DIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ICN_PLL_DIV_SPEC>;
 #[doc = "Register `ICN_PLL_DIV` writer"]
-pub struct W(crate::W<ICN_PLL_DIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ICN_PLL_DIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ICN_PLL_DIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ICN_PLL_DIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ICN_PLL_DIV_SPEC>;
 #[doc = "Field `r_div` reader - "]
-pub type R_DIV_R = crate::FieldReader<u8, u8>;
+pub type R_DIV_R = crate::FieldReader;
 #[doc = "Field `r_div` writer - "]
-pub type R_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICN_PLL_DIV_SPEC, u8, u8, 4, O>;
+pub type R_DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `n_div` reader - "]
-pub type N_DIV_R = crate::FieldReader<u16, u16>;
+pub type N_DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `n_div` writer - "]
-pub type N_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICN_PLL_DIV_SPEC, u16, u16, 10, O>;
+pub type N_DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `m_div` reader - "]
-pub type M_DIV_R = crate::FieldReader<u8, u8>;
+pub type M_DIV_R = crate::FieldReader;
 #[doc = "Field `m_div` writer - "]
-pub type M_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICN_PLL_DIV_SPEC, u8, u8, 3, O>;
+pub type M_DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:3"]
     #[inline(always)]
@@ -63,48 +31,50 @@ impl R {
         M_DIV_R::new(((self.bits >> 14) & 7) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ICN_PLL_DIV")
+            .field("r_div", &self.r_div())
+            .field("n_div", &self.n_div())
+            .field("m_div", &self.m_div())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
     #[must_use]
-    pub fn r_div(&mut self) -> R_DIV_W<0> {
-        R_DIV_W::new(self)
+    pub fn r_div(&mut self) -> R_DIV_W<ICN_PLL_DIV_SPEC> {
+        R_DIV_W::new(self, 0)
     }
     #[doc = "Bits 4:13"]
     #[inline(always)]
     #[must_use]
-    pub fn n_div(&mut self) -> N_DIV_W<4> {
-        N_DIV_W::new(self)
+    pub fn n_div(&mut self) -> N_DIV_W<ICN_PLL_DIV_SPEC> {
+        N_DIV_W::new(self, 4)
     }
     #[doc = "Bits 14:16"]
     #[inline(always)]
     #[must_use]
-    pub fn m_div(&mut self) -> M_DIV_W<14> {
-        M_DIV_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn m_div(&mut self) -> M_DIV_W<ICN_PLL_DIV_SPEC> {
+        M_DIV_W::new(self, 14)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icn_pll_div](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`icn_pll_div::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`icn_pll_div::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ICN_PLL_DIV_SPEC;
 impl crate::RegisterSpec for ICN_PLL_DIV_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [icn_pll_div::R](R) reader structure"]
-impl crate::Readable for ICN_PLL_DIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [icn_pll_div::W](W) writer structure"]
+#[doc = "`read()` method returns [`icn_pll_div::R`](R) reader structure"]
+impl crate::Readable for ICN_PLL_DIV_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`icn_pll_div::W`](W) writer structure"]
 impl crate::Writable for ICN_PLL_DIV_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ICN_PLL_DIV to value 0"]
 impl crate::Resettable for ICN_PLL_DIV_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

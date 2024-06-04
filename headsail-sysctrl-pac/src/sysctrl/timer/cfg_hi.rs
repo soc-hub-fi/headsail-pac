@@ -1,71 +1,39 @@
 #[doc = "Register `CFG_HI` reader"]
-pub struct R(crate::R<CFG_HI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFG_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFG_HI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFG_HI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CFG_HI_SPEC>;
 #[doc = "Register `CFG_HI` writer"]
-pub struct W(crate::W<CFG_HI_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFG_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFG_HI_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFG_HI_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CFG_HI_SPEC>;
 #[doc = "Field `EN` reader - Timer enable (starts couting) bit"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Timer enable (starts couting) bit"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RST` reader - Timer high reset, cleared after the reset happened"]
-pub type RST_R = crate::BitReader<bool>;
+pub type RST_R = crate::BitReader;
 #[doc = "Field `RST` writer - Timer high reset, cleared after the reset happened"]
-pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type RST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IRQEN` reader - Timer hi interrupt generation on compare match enable"]
-pub type IRQEN_R = crate::BitReader<bool>;
+pub type IRQEN_R = crate::BitReader;
 #[doc = "Field `IRQEN` writer - Timer hi interrupt generation on compare match enable"]
-pub type IRQEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type IRQEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODE` reader - Timer hi continuous mode configuration 0b0: Continue incrementing timer hi counter after a compare match with CMP_HI 0b1: Reset timer to after a compare match with CMP_HI"]
-pub type MODE_R = crate::BitReader<bool>;
+pub type MODE_R = crate::BitReader;
 #[doc = "Field `MODE` writer - Timer hi continuous mode configuration 0b0: Continue incrementing timer hi counter after a compare match with CMP_HI 0b1: Reset timer to after a compare match with CMP_HI"]
-pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ONES` reader - Timer hi one shot configuration"]
-pub type ONES_R = crate::BitReader<bool>;
+pub type ONES_R = crate::BitReader;
 #[doc = "Field `ONES` writer - Timer hi one shot configuration"]
-pub type ONES_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type ONES_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PEN` reader - Timer hi prescaler enable bit"]
-pub type PEN_R = crate::BitReader<bool>;
+pub type PEN_R = crate::BitReader;
 #[doc = "Field `PEN` writer - Timer hi prescaler enable bit"]
-pub type PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type PEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CCFG` reader - Timer hi clock source configuration 0b0: FLL or FLL plus Prescaler 0b1: 32 kHz reference clock"]
-pub type CCFG_R = crate::BitReader<bool>;
+pub type CCFG_R = crate::BitReader;
 #[doc = "Field `CCFG` writer - Timer hi clock source configuration 0b0: FLL or FLL plus Prescaler 0b1: 32 kHz reference clock"]
-pub type CCFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_HI_SPEC, bool, O>;
+pub type CCFG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PVAL` reader - Timer hi prescaler value. ftimer = fclk/(1 + PVAL)"]
-pub type PVAL_R = crate::FieldReader<u8, u8>;
+pub type PVAL_R = crate::FieldReader;
 #[doc = "Field `PVAL` writer - Timer hi prescaler value. ftimer = fclk/(1 + PVAL)"]
-pub type PVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_HI_SPEC, u8, u8, 8, O>;
+pub type PVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Timer enable (starts couting) bit"]
     #[inline(always)]
@@ -108,78 +76,85 @@ impl R {
         PVAL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG_HI")
+            .field("en", &self.en())
+            .field("rst", &self.rst())
+            .field("irqen", &self.irqen())
+            .field("mode", &self.mode())
+            .field("ones", &self.ones())
+            .field("pen", &self.pen())
+            .field("ccfg", &self.ccfg())
+            .field("pval", &self.pval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Timer enable (starts couting) bit"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CFG_HI_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer high reset, cleared after the reset happened"]
     #[inline(always)]
     #[must_use]
-    pub fn rst(&mut self) -> RST_W<1> {
-        RST_W::new(self)
+    pub fn rst(&mut self) -> RST_W<CFG_HI_SPEC> {
+        RST_W::new(self, 1)
     }
     #[doc = "Bit 2 - Timer hi interrupt generation on compare match enable"]
     #[inline(always)]
     #[must_use]
-    pub fn irqen(&mut self) -> IRQEN_W<2> {
-        IRQEN_W::new(self)
+    pub fn irqen(&mut self) -> IRQEN_W<CFG_HI_SPEC> {
+        IRQEN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Timer hi continuous mode configuration 0b0: Continue incrementing timer hi counter after a compare match with CMP_HI 0b1: Reset timer to after a compare match with CMP_HI"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<4> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<CFG_HI_SPEC> {
+        MODE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Timer hi one shot configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn ones(&mut self) -> ONES_W<5> {
-        ONES_W::new(self)
+    pub fn ones(&mut self) -> ONES_W<CFG_HI_SPEC> {
+        ONES_W::new(self, 5)
     }
     #[doc = "Bit 6 - Timer hi prescaler enable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn pen(&mut self) -> PEN_W<6> {
-        PEN_W::new(self)
+    pub fn pen(&mut self) -> PEN_W<CFG_HI_SPEC> {
+        PEN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Timer hi clock source configuration 0b0: FLL or FLL plus Prescaler 0b1: 32 kHz reference clock"]
     #[inline(always)]
     #[must_use]
-    pub fn ccfg(&mut self) -> CCFG_W<7> {
-        CCFG_W::new(self)
+    pub fn ccfg(&mut self) -> CCFG_W<CFG_HI_SPEC> {
+        CCFG_W::new(self, 7)
     }
     #[doc = "Bits 8:15 - Timer hi prescaler value. ftimer = fclk/(1 + PVAL)"]
     #[inline(always)]
     #[must_use]
-    pub fn pval(&mut self) -> PVAL_W<8> {
-        PVAL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pval(&mut self) -> PVAL_W<CFG_HI_SPEC> {
+        PVAL_W::new(self, 8)
     }
 }
-#[doc = "Timer High Configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cfg_hi](index.html) module"]
+#[doc = "Timer High Configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg_hi::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg_hi::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CFG_HI_SPEC;
 impl crate::RegisterSpec for CFG_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cfg_hi::R](R) reader structure"]
-impl crate::Readable for CFG_HI_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cfg_hi::W](W) writer structure"]
+#[doc = "`read()` method returns [`cfg_hi::R`](R) reader structure"]
+impl crate::Readable for CFG_HI_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cfg_hi::W`](W) writer structure"]
 impl crate::Writable for CFG_HI_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFG_HI to value 0"]
 impl crate::Resettable for CFG_HI_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

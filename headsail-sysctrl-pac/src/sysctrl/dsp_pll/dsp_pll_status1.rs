@@ -1,20 +1,7 @@
 #[doc = "Register `DSP_PLL_STATUS1` reader"]
-pub struct R(crate::R<DSP_PLL_STATUS1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DSP_PLL_STATUS1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DSP_PLL_STATUS1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DSP_PLL_STATUS1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DSP_PLL_STATUS1_SPEC>;
 #[doc = "Field `status1` reader - "]
-pub type STATUS1_R = crate::FieldReader<u32, u32>;
+pub type STATUS1_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -22,16 +9,22 @@ impl R {
         STATUS1_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsp_pll_status1](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSP_PLL_STATUS1")
+            .field("status1", &self.status1())
+            .finish()
+    }
+}
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsp_pll_status1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSP_PLL_STATUS1_SPEC;
 impl crate::RegisterSpec for DSP_PLL_STATUS1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dsp_pll_status1::R](R) reader structure"]
-impl crate::Readable for DSP_PLL_STATUS1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dsp_pll_status1::R`](R) reader structure"]
+impl crate::Readable for DSP_PLL_STATUS1_SPEC {}
 #[doc = "`reset()` method sets DSP_PLL_STATUS1 to value 0"]
 impl crate::Resettable for DSP_PLL_STATUS1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

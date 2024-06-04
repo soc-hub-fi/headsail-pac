@@ -1,51 +1,19 @@
 #[doc = "Register `SPILEN` reader"]
-pub struct R(crate::R<SPILEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPILEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPILEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPILEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPILEN_SPEC>;
 #[doc = "Register `SPILEN` writer"]
-pub struct W(crate::W<SPILEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPILEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPILEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPILEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SPILEN_SPEC>;
 #[doc = "Field `CMDLEN` reader - The number of bits of the SPI command that should be sent."]
-pub type CMDLEN_R = crate::FieldReader<u8, u8>;
+pub type CMDLEN_R = crate::FieldReader;
 #[doc = "Field `CMDLEN` writer - The number of bits of the SPI command that should be sent."]
-pub type CMDLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPILEN_SPEC, u8, u8, 6, O>;
+pub type CMDLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `ADDRLEN` reader - The number of bits of the SPI address that should be sent."]
-pub type ADDRLEN_R = crate::FieldReader<u8, u8>;
+pub type ADDRLEN_R = crate::FieldReader;
 #[doc = "Field `ADDRLEN` writer - The number of bits of the SPI address that should be sent."]
-pub type ADDRLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPILEN_SPEC, u8, u8, 6, O>;
+pub type ADDRLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `DATALEN` reader - The number of data bits to be read or written."]
-pub type DATALEN_R = crate::FieldReader<u16, u16>;
+pub type DATALEN_R = crate::FieldReader<u16>;
 #[doc = "Field `DATALEN` writer - The number of data bits to be read or written."]
-pub type DATALEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPILEN_SPEC, u16, u16, 16, O>;
+pub type DATALEN_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:5 - The number of bits of the SPI command that should be sent."]
     #[inline(always)]
@@ -63,48 +31,50 @@ impl R {
         DATALEN_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPILEN")
+            .field("cmdlen", &self.cmdlen())
+            .field("addrlen", &self.addrlen())
+            .field("datalen", &self.datalen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - The number of bits of the SPI command that should be sent."]
     #[inline(always)]
     #[must_use]
-    pub fn cmdlen(&mut self) -> CMDLEN_W<0> {
-        CMDLEN_W::new(self)
+    pub fn cmdlen(&mut self) -> CMDLEN_W<SPILEN_SPEC> {
+        CMDLEN_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - The number of bits of the SPI address that should be sent."]
     #[inline(always)]
     #[must_use]
-    pub fn addrlen(&mut self) -> ADDRLEN_W<8> {
-        ADDRLEN_W::new(self)
+    pub fn addrlen(&mut self) -> ADDRLEN_W<SPILEN_SPEC> {
+        ADDRLEN_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - The number of data bits to be read or written."]
     #[inline(always)]
     #[must_use]
-    pub fn datalen(&mut self) -> DATALEN_W<16> {
-        DATALEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn datalen(&mut self) -> DATALEN_W<SPILEN_SPEC> {
+        DATALEN_W::new(self, 16)
     }
 }
-#[doc = "SPI Transfer Length\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spilen](index.html) module"]
+#[doc = "SPI Transfer Length\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spilen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spilen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPILEN_SPEC;
 impl crate::RegisterSpec for SPILEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spilen::R](R) reader structure"]
-impl crate::Readable for SPILEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spilen::W](W) writer structure"]
+#[doc = "`read()` method returns [`spilen::R`](R) reader structure"]
+impl crate::Readable for SPILEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`spilen::W`](W) writer structure"]
 impl crate::Writable for SPILEN_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SPILEN to value 0"]
 impl crate::Resettable for SPILEN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

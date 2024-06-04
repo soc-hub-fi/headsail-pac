@@ -1,52 +1,33 @@
 #[doc = "Register `START` writer"]
-pub struct W(crate::W<START_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<START_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<START_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<START_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<START_SPEC>;
 #[doc = "Field `START` writer - "]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, START_SPEC, bool, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for crate::generic::Reg<START_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<0> {
-        START_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn start(&mut self) -> START_W<START_SPEC> {
+        START_W::new(self, 0)
     }
 }
-#[doc = "\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [start](index.html) module"]
+#[doc = "\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`start::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct START_SPEC;
 impl crate::RegisterSpec for START_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [start::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`start::W`](W) writer structure"]
 impl crate::Writable for START_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets START to value 0"]
 impl crate::Resettable for START_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

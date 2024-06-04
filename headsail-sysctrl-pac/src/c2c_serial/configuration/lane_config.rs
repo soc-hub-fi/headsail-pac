@@ -1,43 +1,11 @@
 #[doc = "Register `LANE_CONFIG[%s]` reader"]
-pub struct R(crate::R<LANE_CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LANE_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LANE_CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LANE_CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LANE_CONFIG_SPEC>;
 #[doc = "Register `LANE_CONFIG[%s]` writer"]
-pub struct W(crate::W<LANE_CONFIG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LANE_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LANE_CONFIG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LANE_CONFIG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LANE_CONFIG_SPEC>;
 #[doc = "Field `CONFIG` reader - "]
-pub type CONFIG_R = crate::FieldReader<u32, u32>;
+pub type CONFIG_R = crate::FieldReader<u32>;
 #[doc = "Field `CONFIG` writer - "]
-pub type CONFIG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LANE_CONFIG_SPEC, u32, u32, 32, O>;
+pub type CONFIG_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -45,37 +13,37 @@ impl R {
         CONFIG_R::new(self.bits)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LANE_CONFIG")
+            .field("config", &self.config())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     #[must_use]
-    pub fn config(&mut self) -> CONFIG_W<0> {
-        CONFIG_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn config(&mut self) -> CONFIG_W<LANE_CONFIG_SPEC> {
+        CONFIG_W::new(self, 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lane_config](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lane_config::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lane_config::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LANE_CONFIG_SPEC;
 impl crate::RegisterSpec for LANE_CONFIG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lane_config::R](R) reader structure"]
-impl crate::Readable for LANE_CONFIG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lane_config::W](W) writer structure"]
+#[doc = "`read()` method returns [`lane_config::R`](R) reader structure"]
+impl crate::Readable for LANE_CONFIG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`lane_config::W`](W) writer structure"]
 impl crate::Writable for LANE_CONFIG_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LANE_CONFIG[%s]
 to value 0"]
 impl crate::Resettable for LANE_CONFIG_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

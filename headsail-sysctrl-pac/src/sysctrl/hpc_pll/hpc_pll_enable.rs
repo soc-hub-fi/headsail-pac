@@ -1,44 +1,11 @@
 #[doc = "Register `HPC_PLL_ENABLE` reader"]
-pub struct R(crate::R<HPC_PLL_ENABLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HPC_PLL_ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HPC_PLL_ENABLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HPC_PLL_ENABLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HPC_PLL_ENABLE_SPEC>;
 #[doc = "Register `HPC_PLL_ENABLE` writer"]
-pub struct W(crate::W<HPC_PLL_ENABLE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HPC_PLL_ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HPC_PLL_ENABLE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HPC_PLL_ENABLE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HPC_PLL_ENABLE_SPEC>;
 #[doc = "Field `spare_ctrl` reader - "]
-pub type SPARE_CTRL_R = crate::FieldReader<u32, u32>;
+pub type SPARE_CTRL_R = crate::FieldReader<u32>;
 #[doc = "Field `spare_ctrl` writer - "]
-pub type SPARE_CTRL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HPC_PLL_ENABLE_SPEC, u32, u32, 32, O>;
+pub type SPARE_CTRL_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -46,36 +13,36 @@ impl R {
         SPARE_CTRL_R::new(self.bits)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HPC_PLL_ENABLE")
+            .field("spare_ctrl", &self.spare_ctrl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     #[must_use]
-    pub fn spare_ctrl(&mut self) -> SPARE_CTRL_W<0> {
-        SPARE_CTRL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn spare_ctrl(&mut self) -> SPARE_CTRL_W<HPC_PLL_ENABLE_SPEC> {
+        SPARE_CTRL_W::new(self, 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hpc_pll_enable](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hpc_pll_enable::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hpc_pll_enable::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HPC_PLL_ENABLE_SPEC;
 impl crate::RegisterSpec for HPC_PLL_ENABLE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hpc_pll_enable::R](R) reader structure"]
-impl crate::Readable for HPC_PLL_ENABLE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hpc_pll_enable::W](W) writer structure"]
+#[doc = "`read()` method returns [`hpc_pll_enable::R`](R) reader structure"]
+impl crate::Readable for HPC_PLL_ENABLE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hpc_pll_enable::W`](W) writer structure"]
 impl crate::Writable for HPC_PLL_ENABLE_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HPC_PLL_ENABLE to value 0"]
 impl crate::Resettable for HPC_PLL_ENABLE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

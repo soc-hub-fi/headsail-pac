@@ -1,47 +1,15 @@
 #[doc = "Register `PR_MASK3` reader"]
-pub struct R(crate::R<PR_MASK3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PR_MASK3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PR_MASK3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PR_MASK3_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PR_MASK3_SPEC>;
 #[doc = "Register `PR_MASK3` writer"]
-pub struct W(crate::W<PR_MASK3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PR_MASK3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PR_MASK3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PR_MASK3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PR_MASK3_SPEC>;
 #[doc = "Field `PR_MASK3` reader - Event Mask to enable/disable event dispatch to peripherals. Setting bit\\[i\\]
 to 0b1 disables dispatching event to peripherals. Setting bit\\[i\\]
 to 0b0 enables dispatching event to peripherals."]
-pub type PR_MASK3_R = crate::FieldReader<u32, u32>;
+pub type PR_MASK3_R = crate::FieldReader<u32>;
 #[doc = "Field `PR_MASK3` writer - Event Mask to enable/disable event dispatch to peripherals. Setting bit\\[i\\]
 to 0b1 disables dispatching event to peripherals. Setting bit\\[i\\]
 to 0b0 enables dispatching event to peripherals."]
-pub type PR_MASK3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PR_MASK3_SPEC, u32, u32, 32, O>;
+pub type PR_MASK3_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Event Mask to enable/disable event dispatch to peripherals. Setting bit\\[i\\]
 to 0b1 disables dispatching event to peripherals. Setting bit\\[i\\]
@@ -51,38 +19,38 @@ to 0b0 enables dispatching event to peripherals."]
         PR_MASK3_R::new(self.bits)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PR_MASK3")
+            .field("pr_mask3", &self.pr_mask3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Event Mask to enable/disable event dispatch to peripherals. Setting bit\\[i\\]
 to 0b1 disables dispatching event to peripherals. Setting bit\\[i\\]
 to 0b0 enables dispatching event to peripherals."]
     #[inline(always)]
     #[must_use]
-    pub fn pr_mask3(&mut self) -> PR_MASK3_W<0> {
-        PR_MASK3_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pr_mask3(&mut self) -> PR_MASK3_W<PR_MASK3_SPEC> {
+        PR_MASK3_W::new(self, 0)
     }
 }
-#[doc = "Events 96-127 dispatch mask to peripherals\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pr_mask3](index.html) module"]
+#[doc = "Events 96-127 dispatch mask to peripherals\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pr_mask3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pr_mask3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PR_MASK3_SPEC;
 impl crate::RegisterSpec for PR_MASK3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pr_mask3::R](R) reader structure"]
-impl crate::Readable for PR_MASK3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pr_mask3::W](W) writer structure"]
+#[doc = "`read()` method returns [`pr_mask3::R`](R) reader structure"]
+impl crate::Readable for PR_MASK3_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pr_mask3::W`](W) writer structure"]
 impl crate::Writable for PR_MASK3_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PR_MASK3 to value 0xffff_ffff"]
 impl crate::Resettable for PR_MASK3_SPEC {
-    const RESET_VALUE: Self::Ux = 0xffff_ffff;
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

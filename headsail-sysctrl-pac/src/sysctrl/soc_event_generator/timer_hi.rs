@@ -1,44 +1,11 @@
 #[doc = "Register `TIMER_HI` reader"]
-pub struct R(crate::R<TIMER_HI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TIMER_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TIMER_HI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TIMER_HI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TIMER_HI_SPEC>;
 #[doc = "Register `TIMER_HI` writer"]
-pub struct W(crate::W<TIMER_HI_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TIMER_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TIMER_HI_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TIMER_HI_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TIMER_HI_SPEC>;
 #[doc = "Field `TIMER_HI_EVENT` reader - Trigger and start APB Timer HI by the event with id that equals TIMER_HI_EVENT"]
-pub type TIMER_HI_EVENT_R = crate::FieldReader<u8, u8>;
+pub type TIMER_HI_EVENT_R = crate::FieldReader;
 #[doc = "Field `TIMER_HI_EVENT` writer - Trigger and start APB Timer HI by the event with id that equals TIMER_HI_EVENT"]
-pub type TIMER_HI_EVENT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TIMER_HI_SPEC, u8, u8, 8, O>;
+pub type TIMER_HI_EVENT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Trigger and start APB Timer HI by the event with id that equals TIMER_HI_EVENT"]
     #[inline(always)]
@@ -46,36 +13,36 @@ impl R {
         TIMER_HI_EVENT_R::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMER_HI")
+            .field("timer_hi_event", &self.timer_hi_event())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Trigger and start APB Timer HI by the event with id that equals TIMER_HI_EVENT"]
     #[inline(always)]
     #[must_use]
-    pub fn timer_hi_event(&mut self) -> TIMER_HI_EVENT_W<0> {
-        TIMER_HI_EVENT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn timer_hi_event(&mut self) -> TIMER_HI_EVENT_W<TIMER_HI_SPEC> {
+        TIMER_HI_EVENT_W::new(self, 0)
     }
 }
-#[doc = "Trigger Timer HI of APB Timer with event\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer_hi](index.html) module"]
+#[doc = "Trigger Timer HI of APB Timer with event\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timer_hi::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timer_hi::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMER_HI_SPEC;
 impl crate::RegisterSpec for TIMER_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer_hi::R](R) reader structure"]
-impl crate::Readable for TIMER_HI_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [timer_hi::W](W) writer structure"]
+#[doc = "`read()` method returns [`timer_hi::R`](R) reader structure"]
+impl crate::Readable for TIMER_HI_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`timer_hi::W`](W) writer structure"]
 impl crate::Writable for TIMER_HI_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMER_HI to value 0"]
 impl crate::Resettable for TIMER_HI_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

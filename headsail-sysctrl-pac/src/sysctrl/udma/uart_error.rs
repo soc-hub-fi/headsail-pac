@@ -1,22 +1,9 @@
 #[doc = "Register `UART_ERROR` reader"]
-pub struct R(crate::R<UART_ERROR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UART_ERROR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UART_ERROR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UART_ERROR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<UART_ERROR_SPEC>;
 #[doc = "Field `RX_ERR_OVERFLOW` reader - RX overflow error status flag: - 1'b0: no error - 1'b1: RX overflow error occurred"]
-pub type RX_ERR_OVERFLOW_R = crate::BitReader<bool>;
+pub type RX_ERR_OVERFLOW_R = crate::BitReader;
 #[doc = "Field `RX_ERR_PARITY` reader - RX parity error status flag: - 1'b0: no error - 1'b1: RX parity error occurred"]
-pub type RX_ERR_PARITY_R = crate::BitReader<bool>;
+pub type RX_ERR_PARITY_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - RX overflow error status flag: - 1'b0: no error - 1'b1: RX overflow error occurred"]
     #[inline(always)]
@@ -29,16 +16,23 @@ impl R {
         RX_ERR_PARITY_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "uDMA UART Error status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_error](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART_ERROR")
+            .field("rx_err_overflow", &self.rx_err_overflow())
+            .field("rx_err_parity", &self.rx_err_parity())
+            .finish()
+    }
+}
+#[doc = "uDMA UART Error status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`uart_error::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct UART_ERROR_SPEC;
 impl crate::RegisterSpec for UART_ERROR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [uart_error::R](R) reader structure"]
-impl crate::Readable for UART_ERROR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`uart_error::R`](R) reader structure"]
+impl crate::Readable for UART_ERROR_SPEC {}
 #[doc = "`reset()` method sets UART_ERROR to value 0"]
 impl crate::Resettable for UART_ERROR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

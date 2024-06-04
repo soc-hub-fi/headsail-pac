@@ -1,51 +1,19 @@
 #[doc = "Register `power_ctrl` reader"]
-pub struct R(crate::R<POWER_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<POWER_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<POWER_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<POWER_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<POWER_CTRL_SPEC>;
 #[doc = "Register `power_ctrl` writer"]
-pub struct W(crate::W<POWER_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<POWER_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<POWER_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<POWER_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<POWER_CTRL_SPEC>;
 #[doc = "Field `down1` reader - "]
-pub type DOWN1_R = crate::BitReader<bool>;
+pub type DOWN1_R = crate::BitReader;
 #[doc = "Field `down1` writer - "]
-pub type DOWN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_CTRL_SPEC, bool, O>;
+pub type DOWN1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `down2` reader - "]
-pub type DOWN2_R = crate::BitReader<bool>;
+pub type DOWN2_R = crate::BitReader;
 #[doc = "Field `down2` writer - "]
-pub type DOWN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_CTRL_SPEC, bool, O>;
+pub type DOWN2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `iso` reader - "]
-pub type ISO_R = crate::BitReader<bool>;
+pub type ISO_R = crate::BitReader;
 #[doc = "Field `iso` writer - "]
-pub type ISO_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_CTRL_SPEC, bool, O>;
+pub type ISO_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -63,48 +31,50 @@ impl R {
         ISO_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("power_ctrl")
+            .field("down1", &self.down1())
+            .field("down2", &self.down2())
+            .field("iso", &self.iso())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn down1(&mut self) -> DOWN1_W<0> {
-        DOWN1_W::new(self)
+    pub fn down1(&mut self) -> DOWN1_W<POWER_CTRL_SPEC> {
+        DOWN1_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn down2(&mut self) -> DOWN2_W<1> {
-        DOWN2_W::new(self)
+    pub fn down2(&mut self) -> DOWN2_W<POWER_CTRL_SPEC> {
+        DOWN2_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn iso(&mut self) -> ISO_W<2> {
-        ISO_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn iso(&mut self) -> ISO_W<POWER_CTRL_SPEC> {
+        ISO_W::new(self, 2)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [power_ctrl](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`power_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`power_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct POWER_CTRL_SPEC;
 impl crate::RegisterSpec for POWER_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [power_ctrl::R](R) reader structure"]
-impl crate::Readable for POWER_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [power_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`power_ctrl::R`](R) reader structure"]
+impl crate::Readable for POWER_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`power_ctrl::W`](W) writer structure"]
 impl crate::Writable for POWER_CTRL_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets power_ctrl to value 0"]
 impl crate::Resettable for POWER_CTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,24 +1,11 @@
 #[doc = "Register `INFO` reader"]
-pub struct R(crate::R<INFO_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INFO_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INFO_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INFO_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INFO_SPEC>;
 #[doc = "Field `version` reader - Version number"]
-pub type VERSION_R = crate::FieldReader<u8, u8>;
+pub type VERSION_R = crate::FieldReader;
 #[doc = "Field `axi_addr_width` reader - AXI Address Width"]
-pub type AXI_ADDR_WIDTH_R = crate::FieldReader<u8, u8>;
+pub type AXI_ADDR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `axi_data_width` reader - AXI Data Width"]
-pub type AXI_DATA_WIDTH_R = crate::FieldReader<u8, u8>;
+pub type AXI_DATA_WIDTH_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Version number"]
     #[inline(always)]
@@ -36,16 +23,24 @@ impl R {
         AXI_DATA_WIDTH_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
-#[doc = "Version number - AXI Address width - AXI Data width-Reserved\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [info](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INFO")
+            .field("version", &self.version())
+            .field("axi_addr_width", &self.axi_addr_width())
+            .field("axi_data_width", &self.axi_data_width())
+            .finish()
+    }
+}
+#[doc = "Version number - AXI Address width - AXI Data width-Reserved\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`info::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INFO_SPEC;
 impl crate::RegisterSpec for INFO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [info::R](R) reader structure"]
-impl crate::Readable for INFO_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`info::R`](R) reader structure"]
+impl crate::Readable for INFO_SPEC {}
 #[doc = "`reset()` method sets INFO to value 0x2000_2000"]
 impl crate::Resettable for INFO_SPEC {
-    const RESET_VALUE: Self::Ux = 0x2000_2000;
+    const RESET_VALUE: u32 = 0x2000_2000;
 }

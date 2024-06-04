@@ -1,43 +1,11 @@
 #[doc = "Register `START_HI` reader"]
-pub struct R(crate::R<START_HI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<START_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<START_HI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<START_HI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<START_HI_SPEC>;
 #[doc = "Register `START_HI` writer"]
-pub struct W(crate::W<START_HI_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<START_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<START_HI_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<START_HI_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<START_HI_SPEC>;
 #[doc = "Field `START_HI` reader - Timer high reset command (writes RST in CFG_LO)"]
-pub type START_HI_R = crate::BitReader<bool>;
+pub type START_HI_R = crate::BitReader;
 #[doc = "Field `START_HI` writer - Timer high reset command (writes RST in CFG_LO)"]
-pub type START_HI_W<'a, const O: u8> = crate::BitWriter<'a, u32, START_HI_SPEC, bool, O>;
+pub type START_HI_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Timer high reset command (writes RST in CFG_LO)"]
     #[inline(always)]
@@ -45,36 +13,36 @@ impl R {
         START_HI_R::new((self.bits & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("START_HI")
+            .field("start_hi", &self.start_hi())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Timer high reset command (writes RST in CFG_LO)"]
     #[inline(always)]
     #[must_use]
-    pub fn start_hi(&mut self) -> START_HI_W<0> {
-        START_HI_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn start_hi(&mut self) -> START_HI_W<START_HI_SPEC> {
+        START_HI_W::new(self, 0)
     }
 }
-#[doc = "Start Timer High counting register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [start_hi](index.html) module"]
+#[doc = "Start Timer High counting register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`start_hi::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`start_hi::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct START_HI_SPEC;
 impl crate::RegisterSpec for START_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [start_hi::R](R) reader structure"]
-impl crate::Readable for START_HI_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [start_hi::W](W) writer structure"]
+#[doc = "`read()` method returns [`start_hi::R`](R) reader structure"]
+impl crate::Readable for START_HI_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`start_hi::W`](W) writer structure"]
 impl crate::Writable for START_HI_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets START_HI to value 0"]
 impl crate::Resettable for START_HI_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

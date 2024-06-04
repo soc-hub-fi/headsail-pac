@@ -1,59 +1,27 @@
 #[doc = "Register `T3_CMD` reader"]
-pub struct R(crate::R<T3_CMD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<T3_CMD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<T3_CMD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<T3_CMD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<T3_CMD_SPEC>;
 #[doc = "Register `T3_CMD` writer"]
-pub struct W(crate::W<T3_CMD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<T3_CMD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<T3_CMD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<T3_CMD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<T3_CMD_SPEC>;
 #[doc = "Field `START` reader - ADV_TIMER3 start command bitfield"]
-pub type START_R = crate::BitReader<bool>;
+pub type START_R = crate::BitReader;
 #[doc = "Field `START` writer - ADV_TIMER3 start command bitfield"]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, T3_CMD_SPEC, bool, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STOP` reader - ADV_TIMER3 stop command bitfield."]
-pub type STOP_R = crate::BitReader<bool>;
+pub type STOP_R = crate::BitReader;
 #[doc = "Field `STOP` writer - ADV_TIMER3 stop command bitfield."]
-pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, T3_CMD_SPEC, bool, O>;
+pub type STOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UPDATE` reader - ADV_TIMER3 update command bitfield."]
-pub type UPDATE_R = crate::BitReader<bool>;
+pub type UPDATE_R = crate::BitReader;
 #[doc = "Field `UPDATE` writer - ADV_TIMER3 update command bitfield."]
-pub type UPDATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, T3_CMD_SPEC, bool, O>;
+pub type UPDATE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RESET` reader - ADV_TIMER3 reset command bitfield"]
-pub type RESET_R = crate::BitReader<bool>;
+pub type RESET_R = crate::BitReader;
 #[doc = "Field `RESET` writer - ADV_TIMER3 reset command bitfield"]
-pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, T3_CMD_SPEC, bool, O>;
+pub type RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ARM` reader - ADV_TIMER3 arm command bitfield."]
-pub type ARM_R = crate::BitReader<bool>;
+pub type ARM_R = crate::BitReader;
 #[doc = "Field `ARM` writer - ADV_TIMER3 arm command bitfield."]
-pub type ARM_W<'a, const O: u8> = crate::BitWriter<'a, u32, T3_CMD_SPEC, bool, O>;
+pub type ARM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - ADV_TIMER3 start command bitfield"]
     #[inline(always)]
@@ -81,60 +49,64 @@ impl R {
         ARM_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("T3_CMD")
+            .field("start", &self.start())
+            .field("stop", &self.stop())
+            .field("update", &self.update())
+            .field("reset", &self.reset())
+            .field("arm", &self.arm())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - ADV_TIMER3 start command bitfield"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<0> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<T3_CMD_SPEC> {
+        START_W::new(self, 0)
     }
     #[doc = "Bit 1 - ADV_TIMER3 stop command bitfield."]
     #[inline(always)]
     #[must_use]
-    pub fn stop(&mut self) -> STOP_W<1> {
-        STOP_W::new(self)
+    pub fn stop(&mut self) -> STOP_W<T3_CMD_SPEC> {
+        STOP_W::new(self, 1)
     }
     #[doc = "Bit 2 - ADV_TIMER3 update command bitfield."]
     #[inline(always)]
     #[must_use]
-    pub fn update(&mut self) -> UPDATE_W<2> {
-        UPDATE_W::new(self)
+    pub fn update(&mut self) -> UPDATE_W<T3_CMD_SPEC> {
+        UPDATE_W::new(self, 2)
     }
     #[doc = "Bit 3 - ADV_TIMER3 reset command bitfield"]
     #[inline(always)]
     #[must_use]
-    pub fn reset(&mut self) -> RESET_W<3> {
-        RESET_W::new(self)
+    pub fn reset(&mut self) -> RESET_W<T3_CMD_SPEC> {
+        RESET_W::new(self, 3)
     }
     #[doc = "Bit 4 - ADV_TIMER3 arm command bitfield."]
     #[inline(always)]
     #[must_use]
-    pub fn arm(&mut self) -> ARM_W<4> {
-        ARM_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn arm(&mut self) -> ARM_W<T3_CMD_SPEC> {
+        ARM_W::new(self, 4)
     }
 }
-#[doc = "ADV_TIMER3 command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t3_cmd](index.html) module"]
+#[doc = "ADV_TIMER3 command register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`t3_cmd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`t3_cmd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct T3_CMD_SPEC;
 impl crate::RegisterSpec for T3_CMD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t3_cmd::R](R) reader structure"]
-impl crate::Readable for T3_CMD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [t3_cmd::W](W) writer structure"]
+#[doc = "`read()` method returns [`t3_cmd::R`](R) reader structure"]
+impl crate::Readable for T3_CMD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`t3_cmd::W`](W) writer structure"]
 impl crate::Writable for T3_CMD_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets T3_CMD to value 0"]
 impl crate::Resettable for T3_CMD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

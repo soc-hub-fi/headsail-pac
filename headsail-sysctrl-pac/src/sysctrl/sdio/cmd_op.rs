@@ -1,28 +1,9 @@
 #[doc = "Register `CMD_OP` writer"]
-pub struct W(crate::W<CMD_OP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMD_OP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMD_OP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMD_OP_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CMD_OP_SPEC>;
 #[doc = "Values for RSP_TYPE: 3'b000: RSP_TYPE_NULL 3'b001: RSP_TYPE_48_CRC 3'b010: RSP_TYPE_48_NOCRC 3'b011: RSP_TYPE_136 3'b100: RSP_TYPE_48_BSY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RSP_TYPE_AW {
+pub enum RSP_TYPE_A {
     #[doc = "0: `0`"]
     RSP_TYPE_NULL = 0,
     #[doc = "1: `1`"]
@@ -34,76 +15,83 @@ pub enum RSP_TYPE_AW {
     #[doc = "4: `100`"]
     RSP_TYPE_48_BSY = 4,
 }
-impl From<RSP_TYPE_AW> for u8 {
+impl From<RSP_TYPE_A> for u8 {
     #[inline(always)]
-    fn from(variant: RSP_TYPE_AW) -> Self {
+    fn from(variant: RSP_TYPE_A) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for RSP_TYPE_A {
+    type Ux = u8;
+}
+impl crate::IsEnum for RSP_TYPE_A {}
 #[doc = "Field `RSP_TYPE` writer - Values for RSP_TYPE: 3'b000: RSP_TYPE_NULL 3'b001: RSP_TYPE_48_CRC 3'b010: RSP_TYPE_48_NOCRC 3'b011: RSP_TYPE_136 3'b100: RSP_TYPE_48_BSY"]
-pub type RSP_TYPE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CMD_OP_SPEC, u8, RSP_TYPE_AW, 3, O>;
-impl<'a, const O: u8> RSP_TYPE_W<'a, O> {
+pub type RSP_TYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, RSP_TYPE_A>;
+impl<'a, REG> RSP_TYPE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn rsp_type_null(self) -> &'a mut W {
-        self.variant(RSP_TYPE_AW::RSP_TYPE_NULL)
+    pub fn rsp_type_null(self) -> &'a mut crate::W<REG> {
+        self.variant(RSP_TYPE_A::RSP_TYPE_NULL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn rsp_type_48_crc(self) -> &'a mut W {
-        self.variant(RSP_TYPE_AW::RSP_TYPE_48_CRC)
+    pub fn rsp_type_48_crc(self) -> &'a mut crate::W<REG> {
+        self.variant(RSP_TYPE_A::RSP_TYPE_48_CRC)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn rsp_type_48_nocrc(self) -> &'a mut W {
-        self.variant(RSP_TYPE_AW::RSP_TYPE_48_NOCRC)
+    pub fn rsp_type_48_nocrc(self) -> &'a mut crate::W<REG> {
+        self.variant(RSP_TYPE_A::RSP_TYPE_48_NOCRC)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn rsp_type_136(self) -> &'a mut W {
-        self.variant(RSP_TYPE_AW::RSP_TYPE_136)
+    pub fn rsp_type_136(self) -> &'a mut crate::W<REG> {
+        self.variant(RSP_TYPE_A::RSP_TYPE_136)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn rsp_type_48_bsy(self) -> &'a mut W {
-        self.variant(RSP_TYPE_AW::RSP_TYPE_48_BSY)
+    pub fn rsp_type_48_bsy(self) -> &'a mut crate::W<REG> {
+        self.variant(RSP_TYPE_A::RSP_TYPE_48_BSY)
     }
 }
 #[doc = "Field `CMD_OPCODE` writer - "]
-pub type CMD_OPCODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMD_OP_SPEC, u8, u8, 6, O>;
+pub type CMD_OPCODE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for crate::generic::Reg<CMD_OP_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Values for RSP_TYPE: 3'b000: RSP_TYPE_NULL 3'b001: RSP_TYPE_48_CRC 3'b010: RSP_TYPE_48_NOCRC 3'b011: RSP_TYPE_136 3'b100: RSP_TYPE_48_BSY"]
     #[inline(always)]
     #[must_use]
-    pub fn rsp_type(&mut self) -> RSP_TYPE_W<0> {
-        RSP_TYPE_W::new(self)
+    pub fn rsp_type(&mut self) -> RSP_TYPE_W<CMD_OP_SPEC> {
+        RSP_TYPE_W::new(self, 0)
     }
     #[doc = "Bits 8:13"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_opcode(&mut self) -> CMD_OPCODE_W<8> {
-        CMD_OPCODE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn cmd_opcode(&mut self) -> CMD_OPCODE_W<CMD_OP_SPEC> {
+        CMD_OPCODE_W::new(self, 8)
     }
 }
-#[doc = "\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_op](index.html) module"]
+#[doc = "\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd_op::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMD_OP_SPEC;
 impl crate::RegisterSpec for CMD_OP_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [cmd_op::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`cmd_op::W`](W) writer structure"]
 impl crate::Writable for CMD_OP_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMD_OP to value 0"]
 impl crate::Resettable for CMD_OP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,47 +1,15 @@
 #[doc = "Register `buf_data_bank` reader"]
-pub struct R(crate::R<BUF_DATA_BANK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BUF_DATA_BANK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BUF_DATA_BANK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BUF_DATA_BANK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BUF_DATA_BANK_SPEC>;
 #[doc = "Register `buf_data_bank` writer"]
-pub struct W(crate::W<BUF_DATA_BANK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BUF_DATA_BANK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BUF_DATA_BANK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BUF_DATA_BANK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BUF_DATA_BANK_SPEC>;
 #[doc = "Field `a` reader - "]
-pub type A_R = crate::FieldReader<u8, u8>;
+pub type A_R = crate::FieldReader;
 #[doc = "Field `a` writer - "]
-pub type A_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUF_DATA_BANK_SPEC, u8, u8, 4, O>;
+pub type A_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `b` reader - "]
-pub type B_R = crate::FieldReader<u8, u8>;
+pub type B_R = crate::FieldReader;
 #[doc = "Field `b` writer - "]
-pub type B_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUF_DATA_BANK_SPEC, u8, u8, 4, O>;
+pub type B_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3"]
     #[inline(always)]
@@ -54,42 +22,43 @@ impl R {
         B_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("buf_data_bank")
+            .field("a", &self.a())
+            .field("b", &self.b())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
     #[must_use]
-    pub fn a(&mut self) -> A_W<0> {
-        A_W::new(self)
+    pub fn a(&mut self) -> A_W<BUF_DATA_BANK_SPEC> {
+        A_W::new(self, 0)
     }
     #[doc = "Bits 16:19"]
     #[inline(always)]
     #[must_use]
-    pub fn b(&mut self) -> B_W<16> {
-        B_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn b(&mut self) -> B_W<BUF_DATA_BANK_SPEC> {
+        B_W::new(self, 16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf_data_bank](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`buf_data_bank::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`buf_data_bank::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BUF_DATA_BANK_SPEC;
 impl crate::RegisterSpec for BUF_DATA_BANK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [buf_data_bank::R](R) reader structure"]
-impl crate::Readable for BUF_DATA_BANK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [buf_data_bank::W](W) writer structure"]
+#[doc = "`read()` method returns [`buf_data_bank::R`](R) reader structure"]
+impl crate::Readable for BUF_DATA_BANK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`buf_data_bank::W`](W) writer structure"]
 impl crate::Writable for BUF_DATA_BANK_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets buf_data_bank to value 0"]
 impl crate::Resettable for BUF_DATA_BANK_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

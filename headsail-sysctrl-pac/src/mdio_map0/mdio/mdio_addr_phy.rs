@@ -1,44 +1,11 @@
 #[doc = "Register `MDIO_ADDR_PHY` reader"]
-pub struct R(crate::R<MDIO_ADDR_PHY_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MDIO_ADDR_PHY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MDIO_ADDR_PHY_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MDIO_ADDR_PHY_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MDIO_ADDR_PHY_SPEC>;
 #[doc = "Register `MDIO_ADDR_PHY` writer"]
-pub struct W(crate::W<MDIO_ADDR_PHY_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MDIO_ADDR_PHY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MDIO_ADDR_PHY_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MDIO_ADDR_PHY_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MDIO_ADDR_PHY_SPEC>;
 #[doc = "Field `MDIO_ADDR_PHY` reader - "]
-pub type MDIO_ADDR_PHY_R = crate::FieldReader<u8, u8>;
+pub type MDIO_ADDR_PHY_R = crate::FieldReader;
 #[doc = "Field `MDIO_ADDR_PHY` writer - "]
-pub type MDIO_ADDR_PHY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, MDIO_ADDR_PHY_SPEC, u8, u8, 5, O>;
+pub type MDIO_ADDR_PHY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4"]
     #[inline(always)]
@@ -46,36 +13,36 @@ impl R {
         MDIO_ADDR_PHY_R::new((self.bits & 0x1f) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MDIO_ADDR_PHY")
+            .field("mdio_addr_phy", &self.mdio_addr_phy())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     #[must_use]
-    pub fn mdio_addr_phy(&mut self) -> MDIO_ADDR_PHY_W<0> {
-        MDIO_ADDR_PHY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn mdio_addr_phy(&mut self) -> MDIO_ADDR_PHY_W<MDIO_ADDR_PHY_SPEC> {
+        MDIO_ADDR_PHY_W::new(self, 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mdio_addr_phy](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mdio_addr_phy::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mdio_addr_phy::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MDIO_ADDR_PHY_SPEC;
 impl crate::RegisterSpec for MDIO_ADDR_PHY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mdio_addr_phy::R](R) reader structure"]
-impl crate::Readable for MDIO_ADDR_PHY_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mdio_addr_phy::W](W) writer structure"]
+#[doc = "`read()` method returns [`mdio_addr_phy::R`](R) reader structure"]
+impl crate::Readable for MDIO_ADDR_PHY_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mdio_addr_phy::W`](W) writer structure"]
 impl crate::Writable for MDIO_ADDR_PHY_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MDIO_ADDR_PHY to value 0"]
 impl crate::Resettable for MDIO_ADDR_PHY_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

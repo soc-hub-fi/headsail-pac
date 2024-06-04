@@ -1,51 +1,19 @@
 #[doc = "Register `UART_RX_CFG` reader"]
-pub struct R(crate::R<UART_RX_CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UART_RX_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UART_RX_CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UART_RX_CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<UART_RX_CFG_SPEC>;
 #[doc = "Register `UART_RX_CFG` writer"]
-pub struct W(crate::W<UART_RX_CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UART_RX_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UART_RX_CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UART_RX_CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<UART_RX_CFG_SPEC>;
 #[doc = "Field `CONTINOUS` reader - RX channel continuous mode bitfield: -1'b0: disabled -1'b1: enabled At the end of the buffer transfer, the uDMA reloads the address / buffer size and starts a new transfer."]
-pub type CONTINOUS_R = crate::BitReader<bool>;
+pub type CONTINOUS_R = crate::BitReader;
 #[doc = "Field `CONTINOUS` writer - RX channel continuous mode bitfield: -1'b0: disabled -1'b1: enabled At the end of the buffer transfer, the uDMA reloads the address / buffer size and starts a new transfer."]
-pub type CONTINOUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_RX_CFG_SPEC, bool, O>;
+pub type CONTINOUS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EN` reader - RX channel enable and start transfer bitfield: -1'b0: disable -1'b1: enable and start the transfer This signal is used also to queue a transfer if one is already ongoing."]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - RX channel enable and start transfer bitfield: -1'b0: disable -1'b1: enable and start the transfer This signal is used also to queue a transfer if one is already ongoing."]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_RX_CFG_SPEC, bool, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PENDING` reader - "]
-pub type PENDING_R = crate::BitReader<bool>;
+pub type PENDING_R = crate::BitReader;
 #[doc = "Field `CLR` writer - RX channel clear and stop transfer: -1'b0: disable -1'b1: stop and clear the on-going transfer"]
-pub type CLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_RX_CFG_SPEC, bool, O>;
+pub type CLR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - RX channel continuous mode bitfield: -1'b0: disabled -1'b1: enabled At the end of the buffer transfer, the uDMA reloads the address / buffer size and starts a new transfer."]
     #[inline(always)]
@@ -63,48 +31,50 @@ impl R {
         PENDING_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART_RX_CFG")
+            .field("continous", &self.continous())
+            .field("en", &self.en())
+            .field("pending", &self.pending())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - RX channel continuous mode bitfield: -1'b0: disabled -1'b1: enabled At the end of the buffer transfer, the uDMA reloads the address / buffer size and starts a new transfer."]
     #[inline(always)]
     #[must_use]
-    pub fn continous(&mut self) -> CONTINOUS_W<0> {
-        CONTINOUS_W::new(self)
+    pub fn continous(&mut self) -> CONTINOUS_W<UART_RX_CFG_SPEC> {
+        CONTINOUS_W::new(self, 0)
     }
     #[doc = "Bit 4 - RX channel enable and start transfer bitfield: -1'b0: disable -1'b1: enable and start the transfer This signal is used also to queue a transfer if one is already ongoing."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<4> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<UART_RX_CFG_SPEC> {
+        EN_W::new(self, 4)
     }
     #[doc = "Bit 6 - RX channel clear and stop transfer: -1'b0: disable -1'b1: stop and clear the on-going transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn clr(&mut self) -> CLR_W<6> {
-        CLR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn clr(&mut self) -> CLR_W<UART_RX_CFG_SPEC> {
+        CLR_W::new(self, 6)
     }
 }
-#[doc = "uDMA RX UART stream configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_rx_cfg](index.html) module"]
+#[doc = "uDMA RX UART stream configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`uart_rx_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`uart_rx_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct UART_RX_CFG_SPEC;
 impl crate::RegisterSpec for UART_RX_CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [uart_rx_cfg::R](R) reader structure"]
-impl crate::Readable for UART_RX_CFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [uart_rx_cfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`uart_rx_cfg::R`](R) reader structure"]
+impl crate::Readable for UART_RX_CFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`uart_rx_cfg::W`](W) writer structure"]
 impl crate::Writable for UART_RX_CFG_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UART_RX_CFG to value 0"]
 impl crate::Resettable for UART_RX_CFG_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

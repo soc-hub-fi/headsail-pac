@@ -1,20 +1,7 @@
 #[doc = "Register `T1_COUNTER` reader"]
-pub struct R(crate::R<T1_COUNTER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<T1_COUNTER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<T1_COUNTER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<T1_COUNTER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<T1_COUNTER_SPEC>;
 #[doc = "Field `T1_COUNTER` reader - "]
-pub type T1_COUNTER_R = crate::FieldReader<u32, u32>;
+pub type T1_COUNTER_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -22,16 +9,22 @@ impl R {
         T1_COUNTER_R::new(self.bits)
     }
 }
-#[doc = "ADV_TIMER1 counter register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1_counter](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("T1_COUNTER")
+            .field("t1_counter", &self.t1_counter())
+            .finish()
+    }
+}
+#[doc = "ADV_TIMER1 counter register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`t1_counter::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct T1_COUNTER_SPEC;
 impl crate::RegisterSpec for T1_COUNTER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t1_counter::R](R) reader structure"]
-impl crate::Readable for T1_COUNTER_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`t1_counter::R`](R) reader structure"]
+impl crate::Readable for T1_COUNTER_SPEC {}
 #[doc = "`reset()` method sets T1_COUNTER to value 0"]
 impl crate::Resettable for T1_COUNTER_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

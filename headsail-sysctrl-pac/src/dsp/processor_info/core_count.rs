@@ -1,20 +1,7 @@
 #[doc = "Register `core_count` reader"]
-pub struct R(crate::R<CORE_COUNT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CORE_COUNT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CORE_COUNT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CORE_COUNT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CORE_COUNT_SPEC>;
 #[doc = "Field `core_count` reader - "]
-pub type CORE_COUNT_R = crate::FieldReader<u32, u32>;
+pub type CORE_COUNT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -22,16 +9,22 @@ impl R {
         CORE_COUNT_R::new(self.bits)
     }
 }
-#[doc = "Core count\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_count](index.html) module"]
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("core_count")
+            .field("core_count", &self.core_count())
+            .finish()
+    }
+}
+#[doc = "Core count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`core_count::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CORE_COUNT_SPEC;
 impl crate::RegisterSpec for CORE_COUNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_count::R](R) reader structure"]
-impl crate::Readable for CORE_COUNT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`core_count::R`](R) reader structure"]
+impl crate::Readable for CORE_COUNT_SPEC {}
 #[doc = "`reset()` method sets core_count to value 0x01"]
 impl crate::Resettable for CORE_COUNT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u32 = 0x01;
 }

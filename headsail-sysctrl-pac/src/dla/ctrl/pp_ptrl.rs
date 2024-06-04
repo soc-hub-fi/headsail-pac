@@ -1,63 +1,31 @@
 #[doc = "Register `pp_ptrl` reader"]
-pub struct R(crate::R<PP_PTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PP_PTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PP_PTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PP_PTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PP_PTRL_SPEC>;
 #[doc = "Register `pp_ptrl` writer"]
-pub struct W(crate::W<PP_PTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PP_PTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PP_PTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PP_PTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PP_PTRL_SPEC>;
 #[doc = "Field `active_mode` reader - "]
-pub type ACTIVE_MODE_R = crate::FieldReader<u8, u8>;
+pub type ACTIVE_MODE_R = crate::FieldReader;
 #[doc = "Field `active_mode` writer - "]
-pub type ACTIVE_MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PP_PTRL_SPEC, u8, u8, 2, O>;
+pub type ACTIVE_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `reLu` reader - "]
-pub type RE_LU_R = crate::FieldReader<u8, u8>;
+pub type RE_LU_R = crate::FieldReader;
 #[doc = "Field `reLu` writer - "]
-pub type RE_LU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PP_PTRL_SPEC, u8, u8, 2, O>;
+pub type RE_LU_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `max` reader - "]
-pub type MAX_R = crate::FieldReader<u8, u8>;
+pub type MAX_R = crate::FieldReader;
 #[doc = "Field `max` writer - "]
-pub type MAX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PP_PTRL_SPEC, u8, u8, 2, O>;
+pub type MAX_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `pp_select` reader - "]
-pub type PP_SELECT_R = crate::BitReader<bool>;
+pub type PP_SELECT_R = crate::BitReader;
 #[doc = "Field `pp_select` writer - "]
-pub type PP_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PP_PTRL_SPEC, bool, O>;
+pub type PP_SELECT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pool_mode` reader - "]
-pub type POOL_MODE_R = crate::FieldReader<u8, u8>;
+pub type POOL_MODE_R = crate::FieldReader;
 #[doc = "Field `pool_mode` writer - "]
-pub type POOL_MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PP_PTRL_SPEC, u8, u8, 2, O>;
+pub type POOL_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `clip` reader - "]
-pub type CLIP_R = crate::FieldReader<u8, u8>;
+pub type CLIP_R = crate::FieldReader;
 #[doc = "Field `clip` writer - "]
-pub type CLIP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PP_PTRL_SPEC, u8, u8, 5, O>;
+pub type CLIP_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:1"]
     #[inline(always)]
@@ -90,66 +58,71 @@ impl R {
         CLIP_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
+#[cfg(feature = "derive-debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("pp_ptrl")
+            .field("active_mode", &self.active_mode())
+            .field("re_lu", &self.re_lu())
+            .field("max", &self.max())
+            .field("pp_select", &self.pp_select())
+            .field("pool_mode", &self.pool_mode())
+            .field("clip", &self.clip())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]
     #[must_use]
-    pub fn active_mode(&mut self) -> ACTIVE_MODE_W<0> {
-        ACTIVE_MODE_W::new(self)
+    pub fn active_mode(&mut self) -> ACTIVE_MODE_W<PP_PTRL_SPEC> {
+        ACTIVE_MODE_W::new(self, 0)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     #[must_use]
-    pub fn re_lu(&mut self) -> RE_LU_W<2> {
-        RE_LU_W::new(self)
+    pub fn re_lu(&mut self) -> RE_LU_W<PP_PTRL_SPEC> {
+        RE_LU_W::new(self, 2)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     #[must_use]
-    pub fn max(&mut self) -> MAX_W<4> {
-        MAX_W::new(self)
+    pub fn max(&mut self) -> MAX_W<PP_PTRL_SPEC> {
+        MAX_W::new(self, 4)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn pp_select(&mut self) -> PP_SELECT_W<6> {
-        PP_SELECT_W::new(self)
+    pub fn pp_select(&mut self) -> PP_SELECT_W<PP_PTRL_SPEC> {
+        PP_SELECT_W::new(self, 6)
     }
     #[doc = "Bits 7:8"]
     #[inline(always)]
     #[must_use]
-    pub fn pool_mode(&mut self) -> POOL_MODE_W<7> {
-        POOL_MODE_W::new(self)
+    pub fn pool_mode(&mut self) -> POOL_MODE_W<PP_PTRL_SPEC> {
+        POOL_MODE_W::new(self, 7)
     }
     #[doc = "Bits 16:20"]
     #[inline(always)]
     #[must_use]
-    pub fn clip(&mut self) -> CLIP_W<16> {
-        CLIP_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn clip(&mut self) -> CLIP_W<PP_PTRL_SPEC> {
+        CLIP_W::new(self, 16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pp_ptrl](index.html) module"]
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pp_ptrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pp_ptrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PP_PTRL_SPEC;
 impl crate::RegisterSpec for PP_PTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pp_ptrl::R](R) reader structure"]
-impl crate::Readable for PP_PTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pp_ptrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`pp_ptrl::R`](R) reader structure"]
+impl crate::Readable for PP_PTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pp_ptrl::W`](W) writer structure"]
 impl crate::Writable for PP_PTRL_SPEC {
-    type Writer = W;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets pp_ptrl to value 0"]
 impl crate::Resettable for PP_PTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }
