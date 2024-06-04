@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "headsail-sysctrl-pac",
+  "headsail-hpc-pac",
 ]
 
 [workspace.dependencies]

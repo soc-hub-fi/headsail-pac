@@ -1,0 +1,19 @@
+# More info on patch format: https://github.com/rust-embedded/svdtools/
+
+"SYSCTRL": # peripheral
+  _modify:
+    SocControl: # cluster
+      SYSCTRL_PERIPH_CLK_DIV: # register
+        name: PERIPH_CLK_DIV
+
+"DMA*": # peripheral: DMA0, DMA1
+  _modify:
+    # Rename DMA*.status to DMA*.ctrl to avoid confict with inner `status`
+    status: # cluster
+      name: ctrl
+
+"apb_pad_conf_reg_array": # peripheral
+  registers: # cluster
+    _strip_end:
+      # Remove redundant _reg suffix
+      - "_reg"

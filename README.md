@@ -1,6 +1,7 @@
-# SysCtrl PAC
+# Headsail PACs
 
-Peripheral access API for System Control CPU of Headsail SoC. This file provides a guide for 1. users, 2. CI, 3. SVD update.
+Peripheral access APIs for both RISC-V cores on Headsail SoC. This file provides a guide for 1.
+users, 2. CI, 3. SVD update.
 
 ## Usage (users & CI)
 
@@ -34,10 +35,10 @@ for instructions on how to use the peripheral APIs.
 
 ### Run generate
 
-- Use `./update.sh` to re-generate Rust peripheral API from `headsail-sysctrl.svd`.
+- Use `./update.sh` to re-generate Rust peripheral API from `headsail-*.svd`.
 - `cargo check` to verify that the generated API compiles.
 
-The `headsail-sysctrl.svd` represents the latest System View Description (SVD) of Headsail SoC for
+The `headsail-*.svd` represents the latest System View Description (SVD) of Headsail SoC for
 the System Control CPU. This SVD is used to generate a Rust peripheral API using svd2rust. That code
 is formatted and split into files using `form`. Finally, code is formatted to default Rust
 convention using `cargo fmt`.
