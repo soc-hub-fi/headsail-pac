@@ -21,7 +21,7 @@ rm -rf src
 mkdir src
 svdtools patch patches/headsail.yaml
 agave --svd headsail-hpc.svd.patched jenga -f ../jenga.lines -o headsail-hpc.svd.patched.jenga --strategy bytes
-svd2rust --target riscv -i headsail-hpc.svd.patched.jenga --ident-formats-theme legacy --impl-debug --impl-debug-feature derive-debug
+svd2rust --target riscv -i headsail-hpc.svd.patched.jenga --impl-debug --impl-debug-feature derive-debug
 form -i lib.rs -o src
 rm lib.rs
 cargo fmt
