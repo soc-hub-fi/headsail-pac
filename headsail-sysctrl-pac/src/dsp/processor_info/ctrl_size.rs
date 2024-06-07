@@ -1,12 +1,12 @@
 #[doc = "Register `ctrl_size` reader"]
-pub type R = crate::R<CTRL_SIZE_SPEC>;
+pub type R = crate::R<CtrlSizeSpec>;
 #[doc = "Field `size` reader - "]
-pub type SIZE_R = crate::FieldReader<u32>;
+pub type SizeR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
-    pub fn size(&self) -> SIZE_R {
-        SIZE_R::new(self.bits)
+    pub fn size(&self) -> SizeR {
+        SizeR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -18,13 +18,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "CTRL size, per core, in bytes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl_size::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CTRL_SIZE_SPEC;
-impl crate::RegisterSpec for CTRL_SIZE_SPEC {
+pub struct CtrlSizeSpec;
+impl crate::RegisterSpec for CtrlSizeSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ctrl_size::R`](R) reader structure"]
-impl crate::Readable for CTRL_SIZE_SPEC {}
+impl crate::Readable for CtrlSizeSpec {}
 #[doc = "`reset()` method sets ctrl_size to value 0x0400"]
-impl crate::Resettable for CTRL_SIZE_SPEC {
+impl crate::Resettable for CtrlSizeSpec {
     const RESET_VALUE: u32 = 0x0400;
 }

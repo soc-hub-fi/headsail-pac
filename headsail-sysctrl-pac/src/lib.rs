@@ -22,11 +22,11 @@ pub union Vector {
 #[no_mangle]
 pub static __EXTERNAL_INTERRUPTS: [Vector; 0] = [];
 #[doc = "C2C_parallel"]
-pub struct C2C_PARALLEL {
+pub struct C2cParallel {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for C2C_PARALLEL {}
-impl C2C_PARALLEL {
+unsafe impl Send for C2cParallel {}
+impl C2cParallel {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const c2c_parallel::RegisterBlock = 0xffb0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -53,26 +53,26 @@ impl C2C_PARALLEL {
         }
     }
 }
-impl Deref for C2C_PARALLEL {
+impl Deref for C2cParallel {
     type Target = c2c_parallel::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for C2C_PARALLEL {
+impl core::fmt::Debug for C2cParallel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("C2C_PARALLEL").finish()
+        f.debug_struct("C2cParallel").finish()
     }
 }
 #[doc = "C2C_parallel"]
 pub mod c2c_parallel;
 #[doc = "C2C_serial"]
-pub struct C2C_SERIAL {
+pub struct C2cSerial {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for C2C_SERIAL {}
-impl C2C_SERIAL {
+unsafe impl Send for C2cSerial {}
+impl C2cSerial {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const c2c_serial::RegisterBlock = 0xffc0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -99,26 +99,26 @@ impl C2C_SERIAL {
         }
     }
 }
-impl Deref for C2C_SERIAL {
+impl Deref for C2cSerial {
     type Target = c2c_serial::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for C2C_SERIAL {
+impl core::fmt::Debug for C2cSerial {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("C2C_SERIAL").finish()
+        f.debug_struct("C2cSerial").finish()
     }
 }
 #[doc = "C2C_serial"]
 pub mod c2c_serial;
 #[doc = "DLA"]
-pub struct DLA {
+pub struct Dla {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DLA {}
-impl DLA {
+unsafe impl Send for Dla {}
+impl Dla {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dla::RegisterBlock = 0xff70_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -145,26 +145,26 @@ impl DLA {
         }
     }
 }
-impl Deref for DLA {
+impl Deref for Dla {
     type Target = dla::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DLA {
+impl core::fmt::Debug for Dla {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DLA").finish()
+        f.debug_struct("Dla").finish()
     }
 }
 #[doc = "DLA"]
 pub mod dla;
 #[doc = "Stores different status information about the core"]
-pub struct DSP {
+pub struct Dsp {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DSP {}
-impl DSP {
+unsafe impl Send for Dsp {}
+impl Dsp {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dsp::RegisterBlock = 0xff80_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -191,26 +191,26 @@ impl DSP {
         }
     }
 }
-impl Deref for DSP {
+impl Deref for Dsp {
     type Target = dsp::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DSP {
+impl core::fmt::Debug for Dsp {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DSP").finish()
+        f.debug_struct("Dsp").finish()
     }
 }
 #[doc = "Stores different status information about the core"]
 pub mod dsp;
 #[doc = "EthSsPadConf"]
-pub struct ETH_SS_PAD_CONF {
+pub struct EthSsPadConf {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ETH_SS_PAD_CONF {}
-impl ETH_SS_PAD_CONF {
+unsafe impl Send for EthSsPadConf {}
+impl EthSsPadConf {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const eth_ss_pad_conf::RegisterBlock = 0xff40_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -237,26 +237,26 @@ impl ETH_SS_PAD_CONF {
         }
     }
 }
-impl Deref for ETH_SS_PAD_CONF {
+impl Deref for EthSsPadConf {
     type Target = eth_ss_pad_conf::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ETH_SS_PAD_CONF {
+impl core::fmt::Debug for EthSsPadConf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ETH_SS_PAD_CONF").finish()
+        f.debug_struct("EthSsPadConf").finish()
     }
 }
 #[doc = "EthSsPadConf"]
 pub mod eth_ss_pad_conf;
 #[doc = "mdio_map0"]
-pub struct MDIO_MAP0 {
+pub struct MdioMap0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MDIO_MAP0 {}
-impl MDIO_MAP0 {
+unsafe impl Send for MdioMap0 {}
+impl MdioMap0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const mdio_map0::RegisterBlock = 0xff40_0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -283,26 +283,26 @@ impl MDIO_MAP0 {
         }
     }
 }
-impl Deref for MDIO_MAP0 {
+impl Deref for MdioMap0 {
     type Target = mdio_map0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MDIO_MAP0 {
+impl core::fmt::Debug for MdioMap0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MDIO_MAP0").finish()
+        f.debug_struct("MdioMap0").finish()
     }
 }
 #[doc = "mdio_map0"]
 pub mod mdio_map0;
 #[doc = "mdio_map1"]
-pub struct MDIO_MAP1 {
+pub struct MdioMap1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MDIO_MAP1 {}
-impl MDIO_MAP1 {
+unsafe impl Send for MdioMap1 {}
+impl MdioMap1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const mdio_map1::RegisterBlock = 0xff40_0400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -329,26 +329,26 @@ impl MDIO_MAP1 {
         }
     }
 }
-impl Deref for MDIO_MAP1 {
+impl Deref for MdioMap1 {
     type Target = mdio_map1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MDIO_MAP1 {
+impl core::fmt::Debug for MdioMap1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MDIO_MAP1").finish()
+        f.debug_struct("MdioMap1").finish()
     }
 }
 #[doc = "mdio_map1"]
 pub mod mdio_map1;
 #[doc = "HPC"]
-pub struct HPC {
+pub struct Hpc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for HPC {}
-impl HPC {
+unsafe impl Send for Hpc {}
+impl Hpc {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const hpc::RegisterBlock = 0xffe0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -375,26 +375,26 @@ impl HPC {
         }
     }
 }
-impl Deref for HPC {
+impl Deref for Hpc {
     type Target = hpc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for HPC {
+impl core::fmt::Debug for Hpc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("HPC").finish()
+        f.debug_struct("Hpc").finish()
     }
 }
 #[doc = "HPC"]
 pub mod hpc;
 #[doc = "apb_gpio"]
-pub struct APB_GPIO {
+pub struct ApbGpio {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_GPIO {}
-impl APB_GPIO {
+unsafe impl Send for ApbGpio {}
+impl ApbGpio {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_gpio::RegisterBlock = 0xfff0_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -421,26 +421,26 @@ impl APB_GPIO {
         }
     }
 }
-impl Deref for APB_GPIO {
+impl Deref for ApbGpio {
     type Target = apb_gpio::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_GPIO {
+impl core::fmt::Debug for ApbGpio {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_GPIO").finish()
+        f.debug_struct("ApbGpio").finish()
     }
 }
 #[doc = "apb_gpio"]
 pub mod apb_gpio;
 #[doc = "apb_i2c"]
-pub struct APB_I2C {
+pub struct ApbI2c {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_I2C {}
-impl APB_I2C {
+unsafe impl Send for ApbI2c {}
+impl ApbI2c {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_i2c::RegisterBlock = 0xfff0_5000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -467,26 +467,26 @@ impl APB_I2C {
         }
     }
 }
-impl Deref for APB_I2C {
+impl Deref for ApbI2c {
     type Target = apb_i2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_I2C {
+impl core::fmt::Debug for ApbI2c {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_I2C").finish()
+        f.debug_struct("ApbI2c").finish()
     }
 }
 #[doc = "apb_i2c"]
 pub mod apb_i2c;
 #[doc = "apb_spim0"]
-pub struct APB_SPIM0 {
+pub struct ApbSpim0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_SPIM0 {}
-impl APB_SPIM0 {
+unsafe impl Send for ApbSpim0 {}
+impl ApbSpim0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_spim0::RegisterBlock = 0xfff0_2000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -513,26 +513,26 @@ impl APB_SPIM0 {
         }
     }
 }
-impl Deref for APB_SPIM0 {
+impl Deref for ApbSpim0 {
     type Target = apb_spim0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_SPIM0 {
+impl core::fmt::Debug for ApbSpim0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_SPIM0").finish()
+        f.debug_struct("ApbSpim0").finish()
     }
 }
 #[doc = "apb_spim0"]
 pub mod apb_spim0;
 #[doc = "apb_uart0"]
-pub struct APB_UART0 {
+pub struct ApbUart0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_UART0 {}
-impl APB_UART0 {
+unsafe impl Send for ApbUart0 {}
+impl ApbUart0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_uart0::RegisterBlock = 0xfff0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -559,26 +559,26 @@ impl APB_UART0 {
         }
     }
 }
-impl Deref for APB_UART0 {
+impl Deref for ApbUart0 {
     type Target = apb_uart0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_UART0 {
+impl core::fmt::Debug for ApbUart0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_UART0").finish()
+        f.debug_struct("ApbUart0").finish()
     }
 }
 #[doc = "apb_uart0"]
 pub mod apb_uart0;
 #[doc = "apb_spim1"]
-pub struct APB_SPIM1 {
+pub struct ApbSpim1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_SPIM1 {}
-impl APB_SPIM1 {
+unsafe impl Send for ApbSpim1 {}
+impl ApbSpim1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_spim1::RegisterBlock = 0xfff0_3000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -605,26 +605,26 @@ impl APB_SPIM1 {
         }
     }
 }
-impl Deref for APB_SPIM1 {
+impl Deref for ApbSpim1 {
     type Target = apb_spim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_SPIM1 {
+impl core::fmt::Debug for ApbSpim1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_SPIM1").finish()
+        f.debug_struct("ApbSpim1").finish()
     }
 }
 #[doc = "apb_spim1"]
 pub mod apb_spim1;
 #[doc = "apb_uart1"]
-pub struct APB_UART1 {
+pub struct ApbUart1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_UART1 {}
-impl APB_UART1 {
+unsafe impl Send for ApbUart1 {}
+impl ApbUart1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_uart1::RegisterBlock = 0xfff0_1000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -651,26 +651,26 @@ impl APB_UART1 {
         }
     }
 }
-impl Deref for APB_UART1 {
+impl Deref for ApbUart1 {
     type Target = apb_uart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_UART1 {
+impl core::fmt::Debug for ApbUart1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_UART1").finish()
+        f.debug_struct("ApbUart1").finish()
     }
 }
 #[doc = "apb_uart1"]
 pub mod apb_uart1;
 #[doc = "apb_sw_irq"]
-pub struct APB_SW_IRQ {
+pub struct ApbSwIrq {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_SW_IRQ {}
-impl APB_SW_IRQ {
+unsafe impl Send for ApbSwIrq {}
+impl ApbSwIrq {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_sw_irq::RegisterBlock = 0xfff0_6000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -697,26 +697,26 @@ impl APB_SW_IRQ {
         }
     }
 }
-impl Deref for APB_SW_IRQ {
+impl Deref for ApbSwIrq {
     type Target = apb_sw_irq::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_SW_IRQ {
+impl core::fmt::Debug for ApbSwIrq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_SW_IRQ").finish()
+        f.debug_struct("ApbSwIrq").finish()
     }
 }
 #[doc = "apb_sw_irq"]
 pub mod apb_sw_irq;
 #[doc = "apb_pad_conf"]
-pub struct APB_PAD_CONF {
+pub struct ApbPadConf {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_PAD_CONF {}
-impl APB_PAD_CONF {
+unsafe impl Send for ApbPadConf {}
+impl ApbPadConf {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const apb_pad_conf::RegisterBlock = 0xfff0_7000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -743,26 +743,26 @@ impl APB_PAD_CONF {
         }
     }
 }
-impl Deref for APB_PAD_CONF {
+impl Deref for ApbPadConf {
     type Target = apb_pad_conf::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_PAD_CONF {
+impl core::fmt::Debug for ApbPadConf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_PAD_CONF").finish()
+        f.debug_struct("ApbPadConf").finish()
     }
 }
 #[doc = "apb_pad_conf"]
 pub mod apb_pad_conf;
 #[doc = "sdram_cfg"]
-pub struct SDRAM_CFG {
+pub struct SdramCfg {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SDRAM_CFG {}
-impl SDRAM_CFG {
+unsafe impl Send for SdramCfg {}
+impl SdramCfg {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const sdram_cfg::RegisterBlock = 0xffd0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -789,26 +789,26 @@ impl SDRAM_CFG {
         }
     }
 }
-impl Deref for SDRAM_CFG {
+impl Deref for SdramCfg {
     type Target = sdram_cfg::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SDRAM_CFG {
+impl core::fmt::Debug for SdramCfg {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SDRAM_CFG").finish()
+        f.debug_struct("SdramCfg").finish()
     }
 }
 #[doc = "sdram_cfg"]
 pub mod sdram_cfg;
 #[doc = "SYSCTRL"]
-pub struct SYSCTRL {
+pub struct Sysctrl {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SYSCTRL {}
-impl SYSCTRL {
+unsafe impl Send for Sysctrl {}
+impl Sysctrl {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const sysctrl::RegisterBlock = 0x1a10_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -835,26 +835,26 @@ impl SYSCTRL {
         }
     }
 }
-impl Deref for SYSCTRL {
+impl Deref for Sysctrl {
     type Target = sysctrl::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SYSCTRL {
+impl core::fmt::Debug for Sysctrl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SYSCTRL").finish()
+        f.debug_struct("Sysctrl").finish()
     }
 }
 #[doc = "SYSCTRL"]
 pub mod sysctrl;
 #[doc = "The Excel of Register Map can be found here. <https://tuni.sharepoint.com/:x:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B971A5DEF-758E-4A18-8EA3-0F3F2D60F0BB%7D&file=DMA_register_map.xlsx&action=default&mobileredirect=true&cid=419a13fc-9dbd-45b9-8f31-77899c555ace> DMA Sub System Document available in below link: <https://tuni.sharepoint.com/:w:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B9E9DFD0D-B0CA-436B-ABA0-57DB3B73560E%7D&file=DMA_Sub_System_Document.....docx&action=default&mobileredirect=true>"]
-pub struct DMA0 {
+pub struct Dma0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DMA0 {}
-impl DMA0 {
+unsafe impl Send for Dma0 {}
+impl Dma0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dma0::RegisterBlock = 0xffa0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -881,26 +881,26 @@ impl DMA0 {
         }
     }
 }
-impl Deref for DMA0 {
+impl Deref for Dma0 {
     type Target = dma0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DMA0 {
+impl core::fmt::Debug for Dma0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DMA0").finish()
+        f.debug_struct("Dma0").finish()
     }
 }
 #[doc = "The Excel of Register Map can be found here. &lt;https://tuni.sharepoint.com/:x:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B971A5DEF-758E-4A18-8EA3-0F3F2D60F0BB%7D&amp;file=DMA_register_map.xlsx&amp;action=default&amp;mobileredirect=true&amp;cid=419a13fc-9dbd-45b9-8f31-77899c555ace> DMA Sub System Document available in below link: &lt;https://tuni.sharepoint.com/:w:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B9E9DFD0D-B0CA-436B-ABA0-57DB3B73560E%7D&amp;file=DMA_Sub_System_Document.....docx&amp;action=default&amp;mobileredirect=true>"]
 pub mod dma0;
 #[doc = "The Excel of Register Map can be found here. <https://tuni.sharepoint.com/:x:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B971A5DEF-758E-4A18-8EA3-0F3F2D60F0BB%7D&file=DMA_register_map.xlsx&action=default&mobileredirect=true&cid=419a13fc-9dbd-45b9-8f31-77899c555ace> DMA Sub System Document available in below link: <https://tuni.sharepoint.com/:w:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B9E9DFD0D-B0CA-436B-ABA0-57DB3B73560E%7D&file=DMA_Sub_System_Document.....docx&action=default&mobileredirect=true>"]
-pub struct DMA1 {
+pub struct Dma1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DMA1 {}
-impl DMA1 {
+unsafe impl Send for Dma1 {}
+impl Dma1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dma1::RegisterBlock = 0xffa0_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -927,16 +927,16 @@ impl DMA1 {
         }
     }
 }
-impl Deref for DMA1 {
+impl Deref for Dma1 {
     type Target = dma1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DMA1 {
+impl core::fmt::Debug for Dma1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DMA1").finish()
+        f.debug_struct("Dma1").finish()
     }
 }
 #[doc = "The Excel of Register Map can be found here. &lt;https://tuni.sharepoint.com/:x:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B971A5DEF-758E-4A18-8EA3-0F3F2D60F0BB%7D&amp;file=DMA_register_map.xlsx&amp;action=default&amp;mobileredirect=true&amp;cid=419a13fc-9dbd-45b9-8f31-77899c555ace> DMA Sub System Document available in below link: &lt;https://tuni.sharepoint.com/:w:/r/sites/TG-SoC-Hub/_layouts/15/Doc.aspx?sourcedoc=%7B9E9DFD0D-B0CA-436B-ABA0-57DB3B73560E%7D&amp;file=DMA_Sub_System_Document.....docx&amp;action=default&amp;mobileredirect=true>"]
@@ -947,45 +947,45 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[allow(non_snake_case)]
 pub struct Peripherals {
     #[doc = "C2C_parallel"]
-    pub C2C_PARALLEL: C2C_PARALLEL,
+    pub c2c_parallel: C2cParallel,
     #[doc = "C2C_serial"]
-    pub C2C_SERIAL: C2C_SERIAL,
+    pub c2c_serial: C2cSerial,
     #[doc = "DLA"]
-    pub DLA: DLA,
+    pub dla: Dla,
     #[doc = "DSP"]
-    pub DSP: DSP,
+    pub dsp: Dsp,
     #[doc = "EthSsPadConf"]
-    pub ETH_SS_PAD_CONF: ETH_SS_PAD_CONF,
+    pub eth_ss_pad_conf: EthSsPadConf,
     #[doc = "mdio_map0"]
-    pub MDIO_MAP0: MDIO_MAP0,
+    pub mdio_map0: MdioMap0,
     #[doc = "mdio_map1"]
-    pub MDIO_MAP1: MDIO_MAP1,
+    pub mdio_map1: MdioMap1,
     #[doc = "HPC"]
-    pub HPC: HPC,
+    pub hpc: Hpc,
     #[doc = "apb_gpio"]
-    pub APB_GPIO: APB_GPIO,
+    pub apb_gpio: ApbGpio,
     #[doc = "apb_i2c"]
-    pub APB_I2C: APB_I2C,
+    pub apb_i2c: ApbI2c,
     #[doc = "apb_spim0"]
-    pub APB_SPIM0: APB_SPIM0,
+    pub apb_spim0: ApbSpim0,
     #[doc = "apb_uart0"]
-    pub APB_UART0: APB_UART0,
+    pub apb_uart0: ApbUart0,
     #[doc = "apb_spim1"]
-    pub APB_SPIM1: APB_SPIM1,
+    pub apb_spim1: ApbSpim1,
     #[doc = "apb_uart1"]
-    pub APB_UART1: APB_UART1,
+    pub apb_uart1: ApbUart1,
     #[doc = "apb_sw_irq"]
-    pub APB_SW_IRQ: APB_SW_IRQ,
+    pub apb_sw_irq: ApbSwIrq,
     #[doc = "apb_pad_conf"]
-    pub APB_PAD_CONF: APB_PAD_CONF,
+    pub apb_pad_conf: ApbPadConf,
     #[doc = "sdram_cfg"]
-    pub SDRAM_CFG: SDRAM_CFG,
+    pub sdram_cfg: SdramCfg,
     #[doc = "SYSCTRL"]
-    pub SYSCTRL: SYSCTRL,
+    pub sysctrl: Sysctrl,
     #[doc = "DMA0"]
-    pub DMA0: DMA0,
+    pub dma0: Dma0,
     #[doc = "DMA1"]
-    pub DMA1: DMA1,
+    pub dma1: Dma1,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -1008,64 +1008,64 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            C2C_PARALLEL: C2C_PARALLEL {
+            c2c_parallel: C2cParallel {
                 _marker: PhantomData,
             },
-            C2C_SERIAL: C2C_SERIAL {
+            c2c_serial: C2cSerial {
                 _marker: PhantomData,
             },
-            DLA: DLA {
+            dla: Dla {
                 _marker: PhantomData,
             },
-            DSP: DSP {
+            dsp: Dsp {
                 _marker: PhantomData,
             },
-            ETH_SS_PAD_CONF: ETH_SS_PAD_CONF {
+            eth_ss_pad_conf: EthSsPadConf {
                 _marker: PhantomData,
             },
-            MDIO_MAP0: MDIO_MAP0 {
+            mdio_map0: MdioMap0 {
                 _marker: PhantomData,
             },
-            MDIO_MAP1: MDIO_MAP1 {
+            mdio_map1: MdioMap1 {
                 _marker: PhantomData,
             },
-            HPC: HPC {
+            hpc: Hpc {
                 _marker: PhantomData,
             },
-            APB_GPIO: APB_GPIO {
+            apb_gpio: ApbGpio {
                 _marker: PhantomData,
             },
-            APB_I2C: APB_I2C {
+            apb_i2c: ApbI2c {
                 _marker: PhantomData,
             },
-            APB_SPIM0: APB_SPIM0 {
+            apb_spim0: ApbSpim0 {
                 _marker: PhantomData,
             },
-            APB_UART0: APB_UART0 {
+            apb_uart0: ApbUart0 {
                 _marker: PhantomData,
             },
-            APB_SPIM1: APB_SPIM1 {
+            apb_spim1: ApbSpim1 {
                 _marker: PhantomData,
             },
-            APB_UART1: APB_UART1 {
+            apb_uart1: ApbUart1 {
                 _marker: PhantomData,
             },
-            APB_SW_IRQ: APB_SW_IRQ {
+            apb_sw_irq: ApbSwIrq {
                 _marker: PhantomData,
             },
-            APB_PAD_CONF: APB_PAD_CONF {
+            apb_pad_conf: ApbPadConf {
                 _marker: PhantomData,
             },
-            SDRAM_CFG: SDRAM_CFG {
+            sdram_cfg: SdramCfg {
                 _marker: PhantomData,
             },
-            SYSCTRL: SYSCTRL {
+            sysctrl: Sysctrl {
                 _marker: PhantomData,
             },
-            DMA0: DMA0 {
+            dma0: Dma0 {
                 _marker: PhantomData,
             },
-            DMA1: DMA1 {
+            dma1: Dma1 {
                 _marker: PhantomData,
             },
         }

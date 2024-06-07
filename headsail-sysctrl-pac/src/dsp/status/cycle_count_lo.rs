@@ -1,12 +1,12 @@
 #[doc = "Register `cycle_count_lo` reader"]
-pub type R = crate::R<CYCLE_COUNT_LO_SPEC>;
+pub type R = crate::R<CycleCountLoSpec>;
 #[doc = "Field `lo` reader - Cycle count (low 32 bits)"]
-pub type LO_R = crate::FieldReader<u32>;
+pub type LoR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Cycle count (low 32 bits)"]
     #[inline(always)]
-    pub fn lo(&self) -> LO_R {
-        LO_R::new(self.bits)
+    pub fn lo(&self) -> LoR {
+        LoR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -18,13 +18,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "Low part of Cycle count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cycle_count_lo::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CYCLE_COUNT_LO_SPEC;
-impl crate::RegisterSpec for CYCLE_COUNT_LO_SPEC {
+pub struct CycleCountLoSpec;
+impl crate::RegisterSpec for CycleCountLoSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cycle_count_lo::R`](R) reader structure"]
-impl crate::Readable for CYCLE_COUNT_LO_SPEC {}
+impl crate::Readable for CycleCountLoSpec {}
 #[doc = "`reset()` method sets cycle_count_lo to value 0"]
-impl crate::Resettable for CYCLE_COUNT_LO_SPEC {
+impl crate::Resettable for CycleCountLoSpec {
     const RESET_VALUE: u32 = 0;
 }

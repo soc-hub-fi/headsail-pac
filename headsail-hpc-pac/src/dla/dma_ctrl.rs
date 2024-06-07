@@ -1,25 +1,25 @@
 #[doc = "Register `dma_ctrl` reader"]
-pub type R = crate::R<DMA_CTRL_SPEC>;
+pub type R = crate::R<DmaCtrlSpec>;
 #[doc = "Register `dma_ctrl` writer"]
-pub type W = crate::W<DMA_CTRL_SPEC>;
+pub type W = crate::W<DmaCtrlSpec>;
 #[doc = "Field `read_event` reader - "]
-pub type READ_EVENT_R = crate::BitReader;
+pub type ReadEventR = crate::BitReader;
 #[doc = "Field `read_event` writer - "]
-pub type READ_EVENT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ReadEventW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `write_event` reader - "]
-pub type WRITE_EVENT_R = crate::BitReader;
+pub type WriteEventR = crate::BitReader;
 #[doc = "Field `write_event` writer - "]
-pub type WRITE_EVENT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type WriteEventW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn read_event(&self) -> READ_EVENT_R {
-        READ_EVENT_R::new((self.bits & 1) != 0)
+    pub fn read_event(&self) -> ReadEventR {
+        ReadEventR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn write_event(&self) -> WRITE_EVENT_R {
-        WRITE_EVENT_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn write_event(&self) -> WriteEventR {
+        WriteEventR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -35,30 +35,30 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn read_event(&mut self) -> READ_EVENT_W<DMA_CTRL_SPEC> {
-        READ_EVENT_W::new(self, 0)
+    pub fn read_event(&mut self) -> ReadEventW<DmaCtrlSpec> {
+        ReadEventW::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn write_event(&mut self) -> WRITE_EVENT_W<DMA_CTRL_SPEC> {
-        WRITE_EVENT_W::new(self, 1)
+    pub fn write_event(&mut self) -> WriteEventW<DmaCtrlSpec> {
+        WriteEventW::new(self, 1)
     }
 }
 #[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dma_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dma_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DMA_CTRL_SPEC;
-impl crate::RegisterSpec for DMA_CTRL_SPEC {
+pub struct DmaCtrlSpec;
+impl crate::RegisterSpec for DmaCtrlSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dma_ctrl::R`](R) reader structure"]
-impl crate::Readable for DMA_CTRL_SPEC {}
+impl crate::Readable for DmaCtrlSpec {}
 #[doc = "`write(|w| ..)` method takes [`dma_ctrl::W`](W) writer structure"]
-impl crate::Writable for DMA_CTRL_SPEC {
+impl crate::Writable for DmaCtrlSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets dma_ctrl to value 0"]
-impl crate::Resettable for DMA_CTRL_SPEC {
+impl crate::Resettable for DmaCtrlSpec {
     const RESET_VALUE: u32 = 0;
 }

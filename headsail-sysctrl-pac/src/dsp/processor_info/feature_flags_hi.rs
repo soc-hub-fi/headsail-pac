@@ -1,12 +1,12 @@
 #[doc = "Register `feature_flags_hi` reader"]
-pub type R = crate::R<FEATURE_FLAGS_HI_SPEC>;
+pub type R = crate::R<FeatureFlagsHiSpec>;
 #[doc = "Field `feature_flags_hi` reader - "]
-pub type FEATURE_FLAGS_HI_R = crate::FieldReader<u32>;
+pub type FeatureFlagsHiR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
-    pub fn feature_flags_hi(&self) -> FEATURE_FLAGS_HI_R {
-        FEATURE_FLAGS_HI_R::new(self.bits)
+    pub fn feature_flags_hi(&self) -> FeatureFlagsHiR {
+        FeatureFlagsHiR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -18,13 +18,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "Feature flags, high 32 bits\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`feature_flags_hi::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FEATURE_FLAGS_HI_SPEC;
-impl crate::RegisterSpec for FEATURE_FLAGS_HI_SPEC {
+pub struct FeatureFlagsHiSpec;
+impl crate::RegisterSpec for FeatureFlagsHiSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`feature_flags_hi::R`](R) reader structure"]
-impl crate::Readable for FEATURE_FLAGS_HI_SPEC {}
+impl crate::Readable for FeatureFlagsHiSpec {}
 #[doc = "`reset()` method sets feature_flags_hi to value 0"]
-impl crate::Resettable for FEATURE_FLAGS_HI_SPEC {
+impl crate::Resettable for FeatureFlagsHiSpec {
     const RESET_VALUE: u32 = 0;
 }

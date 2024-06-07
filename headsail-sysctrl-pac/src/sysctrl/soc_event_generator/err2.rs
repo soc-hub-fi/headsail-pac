@@ -1,14 +1,14 @@
 #[doc = "Register `ERR2` reader"]
-pub type R = crate::R<ERR2_SPEC>;
+pub type R = crate::R<Err2Spec>;
 #[doc = "Field `ERR02` reader - Event queue overflow. Clear after read. Reading 0b1 at ERR\\[i\\]
 means the event queue of event with id i overflowed."]
-pub type ERR02_R = crate::FieldReader<u32>;
+pub type Err02R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Event queue overflow. Clear after read. Reading 0b1 at ERR\\[i\\]
 means the event queue of event with id i overflowed."]
     #[inline(always)]
-    pub fn err02(&self) -> ERR02_R {
-        ERR02_R::new(self.bits)
+    pub fn err02(&self) -> Err02R {
+        Err02R::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -20,13 +20,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "Events 64-95 event queue overflow\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ERR2_SPEC;
-impl crate::RegisterSpec for ERR2_SPEC {
+pub struct Err2Spec;
+impl crate::RegisterSpec for Err2Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`err2::R`](R) reader structure"]
-impl crate::Readable for ERR2_SPEC {}
+impl crate::Readable for Err2Spec {}
 #[doc = "`reset()` method sets ERR2 to value 0"]
-impl crate::Resettable for ERR2_SPEC {
+impl crate::Resettable for Err2Spec {
     const RESET_VALUE: u32 = 0;
 }

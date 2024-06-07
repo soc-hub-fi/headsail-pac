@@ -1,12 +1,12 @@
 #[doc = "Register `ID` reader"]
-pub type R = crate::R<ID_SPEC>;
+pub type R = crate::R<IdSpec>;
 #[doc = "Field `ID` reader - ID register. Constant ID value"]
-pub type ID_R = crate::FieldReader<u32>;
+pub type IdR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - ID register. Constant ID value"]
     #[inline(always)]
-    pub fn id(&self) -> ID_R {
-        ID_R::new(self.bits)
+    pub fn id(&self) -> IdR {
+        IdR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -16,13 +16,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "ID register. Constant ID value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ID_SPEC;
-impl crate::RegisterSpec for ID_SPEC {
+pub struct IdSpec;
+impl crate::RegisterSpec for IdSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`id::R`](R) reader structure"]
-impl crate::Readable for ID_SPEC {}
+impl crate::Readable for IdSpec {}
 #[doc = "`reset()` method sets ID to value 0x1234_abcd"]
-impl crate::Resettable for ID_SPEC {
+impl crate::Resettable for IdSpec {
     const RESET_VALUE: u32 = 0x1234_abcd;
 }

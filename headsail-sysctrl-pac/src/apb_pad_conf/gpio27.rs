@@ -1,97 +1,97 @@
 #[doc = "Register `gpio27` reader"]
-pub type R = crate::R<GPIO27_SPEC>;
+pub type R = crate::R<Gpio27Spec>;
 #[doc = "Register `gpio27` writer"]
-pub type W = crate::W<GPIO27_SPEC>;
+pub type W = crate::W<Gpio27Spec>;
 #[doc = "Field `DS0` reader - "]
-pub type DS0_R = crate::BitReader;
+pub type Ds0R = crate::BitReader;
 #[doc = "Field `DS0` writer - "]
-pub type DS0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ds0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DS1` reader - "]
-pub type DS1_R = crate::BitReader;
+pub type Ds1R = crate::BitReader;
 #[doc = "Field `DS1` writer - "]
-pub type DS1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ds1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST0` reader - "]
-pub type ST0_R = crate::BitReader;
+pub type St0R = crate::BitReader;
 #[doc = "Field `ST0` writer - "]
-pub type ST0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type St0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST1` reader - "]
-pub type ST1_R = crate::BitReader;
+pub type St1R = crate::BitReader;
 #[doc = "Field `ST1` writer - "]
-pub type ST1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type St1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RATE_CONTROL` reader - "]
-pub type RATE_CONTROL_R = crate::BitReader;
+pub type RateControlR = crate::BitReader;
 #[doc = "Field `RATE_CONTROL` writer - "]
-pub type RATE_CONTROL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RateControlW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUTPUT_EN` reader - "]
-pub type OUTPUT_EN_R = crate::BitReader;
+pub type OutputEnR = crate::BitReader;
 #[doc = "Field `OUTPUT_EN` writer - "]
-pub type OUTPUT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OutputEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HOLD` reader - "]
-pub type HOLD_R = crate::BitReader;
+pub type HoldR = crate::BitReader;
 #[doc = "Field `HOLD` writer - "]
-pub type HOLD_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HoldW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PULL_ENABLE` reader - "]
-pub type PULL_ENABLE_R = crate::BitReader;
+pub type PullEnableR = crate::BitReader;
 #[doc = "Field `PULL_ENABLE` writer - "]
-pub type PULL_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PullEnableW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PULL_DIR` reader - "]
-pub type PULL_DIR_R = crate::BitReader;
+pub type PullDirR = crate::BitReader;
 #[doc = "Field `PULL_DIR` writer - "]
-pub type PULL_DIR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PullDirW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INPUT_EN` reader - "]
-pub type INPUT_EN_R = crate::BitReader;
+pub type InputEnR = crate::BitReader;
 #[doc = "Field `INPUT_EN` writer - "]
-pub type INPUT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type InputEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn ds0(&self) -> DS0_R {
-        DS0_R::new((self.bits & 1) != 0)
+    pub fn ds0(&self) -> Ds0R {
+        Ds0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn ds1(&self) -> DS1_R {
-        DS1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ds1(&self) -> Ds1R {
+        Ds1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn st0(&self) -> ST0_R {
-        ST0_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn st0(&self) -> St0R {
+        St0R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn st1(&self) -> ST1_R {
-        ST1_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn st1(&self) -> St1R {
+        St1R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn rate_control(&self) -> RATE_CONTROL_R {
-        RATE_CONTROL_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn rate_control(&self) -> RateControlR {
+        RateControlR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    pub fn output_en(&self) -> OUTPUT_EN_R {
-        OUTPUT_EN_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn output_en(&self) -> OutputEnR {
+        OutputEnR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    pub fn hold(&self) -> HOLD_R {
-        HOLD_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn hold(&self) -> HoldR {
+        HoldR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    pub fn pull_enable(&self) -> PULL_ENABLE_R {
-        PULL_ENABLE_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn pull_enable(&self) -> PullEnableR {
+        PullEnableR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn pull_dir(&self) -> PULL_DIR_R {
-        PULL_DIR_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pull_dir(&self) -> PullDirR {
+        PullDirR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    pub fn input_en(&self) -> INPUT_EN_R {
-        INPUT_EN_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn input_en(&self) -> InputEnR {
+        InputEnR::new(((self.bits >> 9) & 1) != 0)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -115,78 +115,78 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ds0(&mut self) -> DS0_W<GPIO27_SPEC> {
-        DS0_W::new(self, 0)
+    pub fn ds0(&mut self) -> Ds0W<Gpio27Spec> {
+        Ds0W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ds1(&mut self) -> DS1_W<GPIO27_SPEC> {
-        DS1_W::new(self, 1)
+    pub fn ds1(&mut self) -> Ds1W<Gpio27Spec> {
+        Ds1W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn st0(&mut self) -> ST0_W<GPIO27_SPEC> {
-        ST0_W::new(self, 2)
+    pub fn st0(&mut self) -> St0W<Gpio27Spec> {
+        St0W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn st1(&mut self) -> ST1_W<GPIO27_SPEC> {
-        ST1_W::new(self, 3)
+    pub fn st1(&mut self) -> St1W<Gpio27Spec> {
+        St1W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn rate_control(&mut self) -> RATE_CONTROL_W<GPIO27_SPEC> {
-        RATE_CONTROL_W::new(self, 4)
+    pub fn rate_control(&mut self) -> RateControlW<Gpio27Spec> {
+        RateControlW::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn output_en(&mut self) -> OUTPUT_EN_W<GPIO27_SPEC> {
-        OUTPUT_EN_W::new(self, 5)
+    pub fn output_en(&mut self) -> OutputEnW<Gpio27Spec> {
+        OutputEnW::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn hold(&mut self) -> HOLD_W<GPIO27_SPEC> {
-        HOLD_W::new(self, 6)
+    pub fn hold(&mut self) -> HoldW<Gpio27Spec> {
+        HoldW::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn pull_enable(&mut self) -> PULL_ENABLE_W<GPIO27_SPEC> {
-        PULL_ENABLE_W::new(self, 7)
+    pub fn pull_enable(&mut self) -> PullEnableW<Gpio27Spec> {
+        PullEnableW::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn pull_dir(&mut self) -> PULL_DIR_W<GPIO27_SPEC> {
-        PULL_DIR_W::new(self, 8)
+    pub fn pull_dir(&mut self) -> PullDirW<Gpio27Spec> {
+        PullDirW::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn input_en(&mut self) -> INPUT_EN_W<GPIO27_SPEC> {
-        INPUT_EN_W::new(self, 9)
+    pub fn input_en(&mut self) -> InputEnW<Gpio27Spec> {
+        InputEnW::new(self, 9)
     }
 }
 #[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio27::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio27::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GPIO27_SPEC;
-impl crate::RegisterSpec for GPIO27_SPEC {
+pub struct Gpio27Spec;
+impl crate::RegisterSpec for Gpio27Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`gpio27::R`](R) reader structure"]
-impl crate::Readable for GPIO27_SPEC {}
+impl crate::Readable for Gpio27Spec {}
 #[doc = "`write(|w| ..)` method takes [`gpio27::W`](W) writer structure"]
-impl crate::Writable for GPIO27_SPEC {
+impl crate::Writable for Gpio27Spec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets gpio27 to value 0"]
-impl crate::Resettable for GPIO27_SPEC {
+impl crate::Resettable for Gpio27Spec {
     const RESET_VALUE: u32 = 0;
 }

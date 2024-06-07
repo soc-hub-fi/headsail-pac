@@ -1,12 +1,12 @@
 #[doc = "Register `mac_sat_max` reader"]
-pub type R = crate::R<MAC_SAT_MAX_SPEC>;
+pub type R = crate::R<MacSatMaxSpec>;
 #[doc = "Field `maximum` reader - "]
-pub type MAXIMUM_R = crate::FieldReader<u32>;
+pub type MaximumR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
-    pub fn maximum(&self) -> MAXIMUM_R {
-        MAXIMUM_R::new(self.bits)
+    pub fn maximum(&self) -> MaximumR {
+        MaximumR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -18,13 +18,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mac_sat_max::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MAC_SAT_MAX_SPEC;
-impl crate::RegisterSpec for MAC_SAT_MAX_SPEC {
+pub struct MacSatMaxSpec;
+impl crate::RegisterSpec for MacSatMaxSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`mac_sat_max::R`](R) reader structure"]
-impl crate::Readable for MAC_SAT_MAX_SPEC {}
+impl crate::Readable for MacSatMaxSpec {}
 #[doc = "`reset()` method sets mac_sat_max to value 0"]
-impl crate::Resettable for MAC_SAT_MAX_SPEC {
+impl crate::Resettable for MacSatMaxSpec {
     const RESET_VALUE: u32 = 0;
 }

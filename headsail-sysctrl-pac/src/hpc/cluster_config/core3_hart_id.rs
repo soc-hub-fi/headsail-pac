@@ -1,12 +1,12 @@
 #[doc = "Register `core3_hart_id` reader"]
-pub type R = crate::R<CORE3_HART_ID_SPEC>;
+pub type R = crate::R<Core3HartIdSpec>;
 #[doc = "Field `hart_id` reader - "]
-pub type HART_ID_R = crate::FieldReader<u64>;
+pub type HartIdR = crate::FieldReader<u64>;
 impl R {
     #[doc = "Bits 0:63"]
     #[inline(always)]
-    pub fn hart_id(&self) -> HART_ID_R {
-        HART_ID_R::new(self.bits)
+    pub fn hart_id(&self) -> HartIdR {
+        HartIdR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -18,13 +18,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "Core #3 Hart ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`core3_hart_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CORE3_HART_ID_SPEC;
-impl crate::RegisterSpec for CORE3_HART_ID_SPEC {
+pub struct Core3HartIdSpec;
+impl crate::RegisterSpec for Core3HartIdSpec {
     type Ux = u64;
 }
 #[doc = "`read()` method returns [`core3_hart_id::R`](R) reader structure"]
-impl crate::Readable for CORE3_HART_ID_SPEC {}
+impl crate::Readable for Core3HartIdSpec {}
 #[doc = "`reset()` method sets core3_hart_id to value 0x03"]
-impl crate::Resettable for CORE3_HART_ID_SPEC {
+impl crate::Resettable for Core3HartIdSpec {
     const RESET_VALUE: u64 = 0x03;
 }

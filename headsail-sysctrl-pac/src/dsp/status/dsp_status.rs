@@ -1,33 +1,33 @@
 #[doc = "Register `dsp_status` reader"]
-pub type R = crate::R<DSP_STATUS_SPEC>;
+pub type R = crate::R<DspStatusSpec>;
 #[doc = "Field `single_stepping_bp` reader - "]
-pub type SINGLE_STEPPING_BP_R = crate::BitReader;
+pub type SingleSteppingBpR = crate::BitReader;
 #[doc = "Field `bp1` reader - "]
-pub type BP1_R = crate::BitReader;
+pub type Bp1R = crate::BitReader;
 #[doc = "Field `manual_bp` reader - "]
-pub type MANUAL_BP_R = crate::BitReader;
+pub type ManualBpR = crate::BitReader;
 #[doc = "Field `bp2` reader - "]
-pub type BP2_R = crate::BitReader;
+pub type Bp2R = crate::BitReader;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn single_stepping_bp(&self) -> SINGLE_STEPPING_BP_R {
-        SINGLE_STEPPING_BP_R::new((self.bits & 1) != 0)
+    pub fn single_stepping_bp(&self) -> SingleSteppingBpR {
+        SingleSteppingBpR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn bp1(&self) -> BP1_R {
-        BP1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn bp1(&self) -> Bp1R {
+        Bp1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn manual_bp(&self) -> MANUAL_BP_R {
-        MANUAL_BP_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn manual_bp(&self) -> ManualBpR {
+        ManualBpR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn bp2(&self) -> BP2_R {
-        BP2_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn bp2(&self) -> Bp2R {
+        Bp2R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -42,13 +42,13 @@ impl core::fmt::Debug for R {
     }
 }
 #[doc = "Status: Shows why the TTA core is in a break state Bit 0: single-stepping breakpoint Bit 1: Breakpoint 1 Bit 2: Breakpoint 2 Bit 3: Manual breakpoint\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsp_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DSP_STATUS_SPEC;
-impl crate::RegisterSpec for DSP_STATUS_SPEC {
+pub struct DspStatusSpec;
+impl crate::RegisterSpec for DspStatusSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dsp_status::R`](R) reader structure"]
-impl crate::Readable for DSP_STATUS_SPEC {}
+impl crate::Readable for DspStatusSpec {}
 #[doc = "`reset()` method sets dsp_status to value 0"]
-impl crate::Resettable for DSP_STATUS_SPEC {
+impl crate::Resettable for DspStatusSpec {
     const RESET_VALUE: u32 = 0;
 }

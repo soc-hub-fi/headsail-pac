@@ -1,16 +1,16 @@
 #[doc = "Register `SPIADR` reader"]
-pub type R = crate::R<SPIADR_SPEC>;
+pub type R = crate::R<SpiadrSpec>;
 #[doc = "Register `SPIADR` writer"]
-pub type W = crate::W<SPIADR_SPEC>;
+pub type W = crate::W<SpiadrSpec>;
 #[doc = "Field `SPIADR` reader - Insert the address to be transmitted"]
-pub type SPIADR_R = crate::FieldReader<u32>;
+pub type SpiadrR = crate::FieldReader<u32>;
 #[doc = "Field `SPIADR` writer - Insert the address to be transmitted"]
-pub type SPIADR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type SpiadrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Insert the address to be transmitted"]
     #[inline(always)]
-    pub fn spiadr(&self) -> SPIADR_R {
-        SPIADR_R::new(self.bits)
+    pub fn spiadr(&self) -> SpiadrR {
+        SpiadrR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -25,24 +25,24 @@ impl W {
     #[doc = "Bits 0:31 - Insert the address to be transmitted"]
     #[inline(always)]
     #[must_use]
-    pub fn spiadr(&mut self) -> SPIADR_W<SPIADR_SPEC> {
-        SPIADR_W::new(self, 0)
+    pub fn spiadr(&mut self) -> SpiadrW<SpiadrSpec> {
+        SpiadrW::new(self, 0)
     }
 }
 #[doc = "SPI Address\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spiadr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spiadr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SPIADR_SPEC;
-impl crate::RegisterSpec for SPIADR_SPEC {
+pub struct SpiadrSpec;
+impl crate::RegisterSpec for SpiadrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`spiadr::R`](R) reader structure"]
-impl crate::Readable for SPIADR_SPEC {}
+impl crate::Readable for SpiadrSpec {}
 #[doc = "`write(|w| ..)` method takes [`spiadr::W`](W) writer structure"]
-impl crate::Writable for SPIADR_SPEC {
+impl crate::Writable for SpiadrSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SPIADR to value 0"]
-impl crate::Resettable for SPIADR_SPEC {
+impl crate::Resettable for SpiadrSpec {
     const RESET_VALUE: u32 = 0;
 }

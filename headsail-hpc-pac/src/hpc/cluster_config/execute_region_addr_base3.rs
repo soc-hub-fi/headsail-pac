@@ -1,16 +1,16 @@
 #[doc = "Register `execute_region_addr_base3` reader"]
-pub type R = crate::R<EXECUTE_REGION_ADDR_BASE3_SPEC>;
+pub type R = crate::R<ExecuteRegionAddrBase3Spec>;
 #[doc = "Register `execute_region_addr_base3` writer"]
-pub type W = crate::W<EXECUTE_REGION_ADDR_BASE3_SPEC>;
+pub type W = crate::W<ExecuteRegionAddrBase3Spec>;
 #[doc = "Field `base` reader - "]
-pub type BASE_R = crate::FieldReader<u64>;
+pub type BaseR = crate::FieldReader<u64>;
 #[doc = "Field `base` writer - "]
-pub type BASE_W<'a, REG> = crate::FieldWriter<'a, REG, 64, u64>;
+pub type BaseW<'a, REG> = crate::FieldWriter<'a, REG, 64, u64>;
 impl R {
     #[doc = "Bits 0:63"]
     #[inline(always)]
-    pub fn base(&self) -> BASE_R {
-        BASE_R::new(self.bits)
+    pub fn base(&self) -> BaseR {
+        BaseR::new(self.bits)
     }
 }
 #[cfg(feature = "derive-debug")]
@@ -25,24 +25,24 @@ impl W {
     #[doc = "Bits 0:63"]
     #[inline(always)]
     #[must_use]
-    pub fn base(&mut self) -> BASE_W<EXECUTE_REGION_ADDR_BASE3_SPEC> {
-        BASE_W::new(self, 0)
+    pub fn base(&mut self) -> BaseW<ExecuteRegionAddrBase3Spec> {
+        BaseW::new(self, 0)
     }
 }
 #[doc = "Base address for execute region #3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`execute_region_addr_base3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`execute_region_addr_base3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EXECUTE_REGION_ADDR_BASE3_SPEC;
-impl crate::RegisterSpec for EXECUTE_REGION_ADDR_BASE3_SPEC {
+pub struct ExecuteRegionAddrBase3Spec;
+impl crate::RegisterSpec for ExecuteRegionAddrBase3Spec {
     type Ux = u64;
 }
 #[doc = "`read()` method returns [`execute_region_addr_base3::R`](R) reader structure"]
-impl crate::Readable for EXECUTE_REGION_ADDR_BASE3_SPEC {}
+impl crate::Readable for ExecuteRegionAddrBase3Spec {}
 #[doc = "`write(|w| ..)` method takes [`execute_region_addr_base3::W`](W) writer structure"]
-impl crate::Writable for EXECUTE_REGION_ADDR_BASE3_SPEC {
+impl crate::Writable for ExecuteRegionAddrBase3Spec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u64 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u64 = 0;
 }
 #[doc = "`reset()` method sets execute_region_addr_base3 to value 0"]
-impl crate::Resettable for EXECUTE_REGION_ADDR_BASE3_SPEC {
+impl crate::Resettable for ExecuteRegionAddrBase3Spec {
     const RESET_VALUE: u64 = 0;
 }
