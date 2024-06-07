@@ -1,5 +1,14 @@
 # More info on patch format: https://github.com/rust-embedded/svdtools/
 
+_modify:
+  _peripherals:
+    apb_pad_conf_reg_array:
+      name: apb_pad_conf
+    C2C_config:
+      name: C2C_parallel
+    EthSSPadConf:
+      name: EthSsPadConf
+
 "SYSCTRL": # peripheral
   _modify:
     SocControl: # cluster
@@ -12,7 +21,7 @@
     status: # cluster
       name: ctrl
 
-"apb_pad_conf_reg_array": # peripheral
+"apb_pad_conf": # peripheral
   registers: # cluster
     _strip_end:
       # Remove redundant _reg suffix
