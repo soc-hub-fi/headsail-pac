@@ -24,5 +24,6 @@ _modify:
 "apb_pad_conf": # peripheral
   registers: # cluster
     _strip_end:
-      # Remove redundant _reg suffix
+      # Remove redundant suffixes
       - "_reg"
+      - "_pad_conf"
