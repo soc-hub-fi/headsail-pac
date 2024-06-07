@@ -1,0 +1,15 @@
+C2C_parallel.Configuration_Registers
+C2C_serial.Configuration
+DLA.CTRL
+EthSsPadConf.padCfg
+mdio_map0.mdio
+mdio_map1.mdio
+apb_gpio.addressBlock
+apb_i2c.registers
+apb_spim0.registers
+apb_spim1.registers
+apb_uart0.registers
+apb_uart1.registers
+apb_sw_irq.Apb_software_irq
+apb_pad_conf.registers
+sdram_cfg.axi_lite_regs

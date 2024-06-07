@@ -32,6 +32,7 @@ for instructions on how to use the peripheral APIs.
 - `cargo install svd2rust --version="^0.33"`
 - `cargo install form --version="^0.12"`
 - `cargo install svdtools --version="^0.3"`
+- `cargo install agave-cli --git https://github.com/hegza/agave`
 
 ### Run generate
 

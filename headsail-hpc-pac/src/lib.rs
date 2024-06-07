@@ -21,17 +21,17 @@ pub union Vector {
 #[doc(hidden)]
 #[no_mangle]
 pub static __EXTERNAL_INTERRUPTS: [Vector; 0] = [];
-#[doc = "C2C_config"]
-pub struct C2C_CONFIG {
+#[doc = "C2C_parallel"]
+pub struct C2C_PARALLEL {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for C2C_CONFIG {}
-impl C2C_CONFIG {
+unsafe impl Send for C2C_PARALLEL {}
+impl C2C_PARALLEL {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const c2c_config::RegisterBlock = 0x0001_ffb0_0000 as *const _;
+    pub const PTR: *const c2c_parallel::RegisterBlock = 0x0001_ffb0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const c2c_config::RegisterBlock {
+    pub const fn ptr() -> *const c2c_parallel::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -53,20 +53,20 @@ impl C2C_CONFIG {
         }
     }
 }
-impl Deref for C2C_CONFIG {
-    type Target = c2c_config::RegisterBlock;
+impl Deref for C2C_PARALLEL {
+    type Target = c2c_parallel::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for C2C_CONFIG {
+impl core::fmt::Debug for C2C_PARALLEL {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("C2C_CONFIG").finish()
+        f.debug_struct("C2C_PARALLEL").finish()
     }
 }
-#[doc = "C2C_config"]
-pub mod c2c_config;
+#[doc = "C2C_parallel"]
+pub mod c2c_parallel;
 #[doc = "C2C_serial"]
 pub struct C2C_SERIAL {
     _marker: PhantomData<*const ()>,
@@ -205,17 +205,17 @@ impl core::fmt::Debug for DSP {
 }
 #[doc = "Stores different status information about the core"]
 pub mod dsp;
-#[doc = "EthSSPadConf"]
-pub struct ETH_SSPAD_CONF {
+#[doc = "EthSsPadConf"]
+pub struct ETH_SS_PAD_CONF {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ETH_SSPAD_CONF {}
-impl ETH_SSPAD_CONF {
+unsafe impl Send for ETH_SS_PAD_CONF {}
+impl ETH_SS_PAD_CONF {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const eth_sspad_conf::RegisterBlock = 0x0001_ff40_0000 as *const _;
+    pub const PTR: *const eth_ss_pad_conf::RegisterBlock = 0x0001_ff40_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const eth_sspad_conf::RegisterBlock {
+    pub const fn ptr() -> *const eth_ss_pad_conf::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -237,20 +237,20 @@ impl ETH_SSPAD_CONF {
         }
     }
 }
-impl Deref for ETH_SSPAD_CONF {
-    type Target = eth_sspad_conf::RegisterBlock;
+impl Deref for ETH_SS_PAD_CONF {
+    type Target = eth_ss_pad_conf::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ETH_SSPAD_CONF {
+impl core::fmt::Debug for ETH_SS_PAD_CONF {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ETH_SSPAD_CONF").finish()
+        f.debug_struct("ETH_SS_PAD_CONF").finish()
     }
 }
-#[doc = "EthSSPadConf"]
-pub mod eth_sspad_conf;
+#[doc = "EthSsPadConf"]
+pub mod eth_ss_pad_conf;
 #[doc = "mdio_map0"]
 pub struct MDIO_MAP0 {
     _marker: PhantomData<*const ()>,
@@ -711,17 +711,17 @@ impl core::fmt::Debug for APB_SW_IRQ {
 }
 #[doc = "apb_sw_irq"]
 pub mod apb_sw_irq;
-#[doc = "apb_pad_conf_reg_array"]
-pub struct APB_PAD_CONF_REG_ARRAY {
+#[doc = "apb_pad_conf"]
+pub struct APB_PAD_CONF {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for APB_PAD_CONF_REG_ARRAY {}
-impl APB_PAD_CONF_REG_ARRAY {
+unsafe impl Send for APB_PAD_CONF {}
+impl APB_PAD_CONF {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const apb_pad_conf_reg_array::RegisterBlock = 0x0001_fff0_7000 as *const _;
+    pub const PTR: *const apb_pad_conf::RegisterBlock = 0x0001_fff0_7000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const apb_pad_conf_reg_array::RegisterBlock {
+    pub const fn ptr() -> *const apb_pad_conf::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -743,20 +743,20 @@ impl APB_PAD_CONF_REG_ARRAY {
         }
     }
 }
-impl Deref for APB_PAD_CONF_REG_ARRAY {
-    type Target = apb_pad_conf_reg_array::RegisterBlock;
+impl Deref for APB_PAD_CONF {
+    type Target = apb_pad_conf::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for APB_PAD_CONF_REG_ARRAY {
+impl core::fmt::Debug for APB_PAD_CONF {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APB_PAD_CONF_REG_ARRAY").finish()
+        f.debug_struct("APB_PAD_CONF").finish()
     }
 }
-#[doc = "apb_pad_conf_reg_array"]
-pub mod apb_pad_conf_reg_array;
+#[doc = "apb_pad_conf"]
+pub mod apb_pad_conf;
 #[doc = "sdram_cfg"]
 pub struct SDRAM_CFG {
     _marker: PhantomData<*const ()>,
@@ -946,16 +946,16 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
 pub struct Peripherals {
-    #[doc = "C2C_config"]
-    pub C2C_CONFIG: C2C_CONFIG,
+    #[doc = "C2C_parallel"]
+    pub C2C_PARALLEL: C2C_PARALLEL,
     #[doc = "C2C_serial"]
     pub C2C_SERIAL: C2C_SERIAL,
     #[doc = "DLA"]
     pub DLA: DLA,
     #[doc = "DSP"]
     pub DSP: DSP,
-    #[doc = "EthSSPadConf"]
-    pub ETH_SSPAD_CONF: ETH_SSPAD_CONF,
+    #[doc = "EthSsPadConf"]
+    pub ETH_SS_PAD_CONF: ETH_SS_PAD_CONF,
     #[doc = "mdio_map0"]
     pub MDIO_MAP0: MDIO_MAP0,
     #[doc = "mdio_map1"]
@@ -976,8 +976,8 @@ pub struct Peripherals {
     pub APB_UART1: APB_UART1,
     #[doc = "apb_sw_irq"]
     pub APB_SW_IRQ: APB_SW_IRQ,
-    #[doc = "apb_pad_conf_reg_array"]
-    pub APB_PAD_CONF_REG_ARRAY: APB_PAD_CONF_REG_ARRAY,
+    #[doc = "apb_pad_conf"]
+    pub APB_PAD_CONF: APB_PAD_CONF,
     #[doc = "sdram_cfg"]
     pub SDRAM_CFG: SDRAM_CFG,
     #[doc = "SYSCTRL"]
@@ -1008,7 +1008,7 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            C2C_CONFIG: C2C_CONFIG {
+            C2C_PARALLEL: C2C_PARALLEL {
                 _marker: PhantomData,
             },
             C2C_SERIAL: C2C_SERIAL {
@@ -1020,7 +1020,7 @@ impl Peripherals {
             DSP: DSP {
                 _marker: PhantomData,
             },
-            ETH_SSPAD_CONF: ETH_SSPAD_CONF {
+            ETH_SS_PAD_CONF: ETH_SS_PAD_CONF {
                 _marker: PhantomData,
             },
             MDIO_MAP0: MDIO_MAP0 {
@@ -1053,7 +1053,7 @@ impl Peripherals {
             APB_SW_IRQ: APB_SW_IRQ {
                 _marker: PhantomData,
             },
-            APB_PAD_CONF_REG_ARRAY: APB_PAD_CONF_REG_ARRAY {
+            APB_PAD_CONF: APB_PAD_CONF {
                 _marker: PhantomData,
             },
             SDRAM_CFG: SDRAM_CFG {
