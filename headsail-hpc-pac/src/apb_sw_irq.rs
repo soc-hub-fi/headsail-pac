@@ -2,17 +2,42 @@
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    apb_software_irq: APB_SOFTWARE_IRQ,
+    read: READ,
+    set: SET,
+    clear: CLEAR,
 }
 impl RegisterBlock {
-    #[doc = "0x00..0x0c - Apb_software_irq"]
+    #[doc = "0x00 - "]
     #[inline(always)]
-    pub const fn apb_software_irq(&self) -> &APB_SOFTWARE_IRQ {
-        &self.apb_software_irq
+    pub const fn read(&self) -> &READ {
+        &self.read
+    }
+    #[doc = "0x04 - "]
+    #[inline(always)]
+    pub const fn set(&self) -> &SET {
+        &self.set
+    }
+    #[doc = "0x08 - "]
+    #[inline(always)]
+    pub const fn clear(&self) -> &CLEAR {
+        &self.clear
     }
 }
-#[doc = "Apb_software_irq"]
-pub use self::apb_software_irq::APB_SOFTWARE_IRQ;
-#[doc = r"Cluster"]
-#[doc = "Apb_software_irq"]
-pub mod apb_software_irq;
+#[doc = "read (r) register accessor: \n\nYou can [`read`](crate::generic::Reg::read) this register and get [`read::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@read`]
+module"]
+#[doc(alias = "read")]
+pub type READ = crate::Reg<read::READ_SPEC>;
+#[doc = ""]
+pub mod read;
+#[doc = "set (w) register accessor: \n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@set`]
+module"]
+#[doc(alias = "set")]
+pub type SET = crate::Reg<set::SET_SPEC>;
+#[doc = ""]
+pub mod set;
+#[doc = "clear (w) register accessor: \n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clear::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clear`]
+module"]
+#[doc(alias = "clear")]
+pub type CLEAR = crate::Reg<clear::CLEAR_SPEC>;
+#[doc = ""]
+pub mod clear;
